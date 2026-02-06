@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose Your Plan</title>
+    <!-- Include your main CSS here -->
+    <link rel="stylesheet" href="css/style.css"> 
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container { max-width: 1200px; margin: auto; padding: 20px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; margin-bottom: 30px; }
+        .plan-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .plan-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .plan-card h2 { color: #007bff; margin-top: 0; }
+        .plan-card .price { font-size: 2.5em; font-weight: bold; color: #333; margin: 15px 0; }
+        .plan-card .price small { font-size: 0.5em; font-weight: normal; }
+        .plan-card ul { list-style: none; padding: 0; margin-bottom: 20px; text-align: left; flex-grow: 1;}
+        .plan-card ul li { margin-bottom: 10px; display: flex; align-items: center; }
+        .plan-card ul li::before { content: '✔️'; margin-right: 10px; color: #28a745; }
+        .plan-card button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+        .plan-card button:hover { background-color: #0056b3; }
+        .billing-toggle { text-align: center; margin-bottom: 20px; }
+        .billing-toggle button {
+            background-color: #6c757d;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .billing-toggle button.active { background-color: #007bff; }
+        #message { text-align: center; margin-top: 20px; font-weight: bold; color: green; }
+        #error-message { text-align: center; margin-top: 20px; font-weight: bold; color: red; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Choose the Right Plan for Your Business</h1>
+        <div class="billing-toggle">
+            <button id="monthly-toggle" class="active">Monthly Billing</button>
+            <button id="yearly-toggle">Yearly Billing (Save up to 20%)</button>
+        </div>
+        <div class="plan-cards" id="plan-cards-container">
+            <!-- Plans will be loaded here by JavaScript -->
+        </div>
+        <div id="message"></div>
+        <div id="error-message"></div>
+    </div>
+
+    <!-- Razorpay Checkout JS -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <script>
+        const planCardsContainer = document.getElementById('plan-cards-container');
+        const monthlyToggle = document.getElementById('monthly-toggle');
+        const yearlyToggle = document.getElementById('yearly-toggle');
+        const messageDiv = document.getElementById('message');
+        const errorDiv = document.getElementById('error-message');
+
+        let currentBillingInterval = 'monthly'; // Default billing interval
+        let availablePlans = []; // Cache for fetched plans
+
+        function showMessage(msg, isError = false) {
+            if (isError) {
+                errorDiv.textContent = msg;
+                messageDiv.textContent = '';
+            } else {
+                messageDiv.textContent = msg;
+                errorDiv.textContent = '';
+            }
+        }
+
+        async function fetchPlans() {
+            try {
+                const response = await fetch('/leads2/api/plans/list.php');
+                const result = await response.json();
+
+                if (result.success) {
+                    availablePlans = result.data;
+                    renderPlans();
+                } else {
+                    showMessage(result.error || 'Failed to fetch plans.', true);
+                }
+            } catch (error) {
+                showMessage('An error occurred while fetching plans: ' + error.message, true);
+            }
+        }
+
+        function renderPlans() {
+            planCardsContainer.innerHTML = ''; // Clear previous plans
+            availablePlans.forEach(plan => {
+                const isMonthly = currentBillingInterval === 'monthly';
+                const basePrice = isMonthly ? plan.base_price_monthly : plan.base_price_yearly;
+                const pricePerAdditionalUser = isMonthly ? plan.price_per_additional_user_monthly : plan.price_per_additional_user_yearly;
+                const intervalText = isMonthly ? 'month' : 'year';
+
+                // Skip plans that don't have pricing for the selected interval (e.g., Enterprise custom pricing)
+                if (basePrice === null && plan.name !== 'Enterprise Plan') return;
+
+                const card = document.createElement('div');
+                card.className = 'plan-card';
+                card.innerHTML = `
+                    <h2>${plan.name}</h2>
+                    <p class="description">${plan.description}</p>
+                    <div class="price">
+                        ${basePrice > 0 ? `₹${basePrice}` : 'Custom'}
+                        ${basePrice > 0 ? `<small>/ ${intervalText}</small>` : ''}
+                    </div>
+                    ${plan.name !== 'Enterprise Plan' && basePrice > 0 ? `
+                        <p>Includes ${plan.included_users} users</p>
+                        ${pricePerAdditionalUser > 0 ? `<p>₹${pricePerAdditionalUser}/user for additional users</p>` : ''}
+                    ` : ''}
+                    <ul>
+                        ${plan.features && plan.features.map(feature => `<li>${feature}</li>`).join('')}
+                    </ul>
+                    ${plan.name === 'Enterprise Plan' 
+                        ? `<button data-plan-id="${plan.id}" data-plan-name="${plan.name}" data-billing-interval="${currentBillingInterval}">Contact Us</button>`
+                        : `<button data-plan-id="${plan.id}" data-plan-name="${plan.name}" data-billing-interval="${currentBillingInterval}">Subscribe Now</button>`
+                    }
+                `;
+                planCardsContainer.appendChild(card);
+            });
+
+            // Add event listeners to the new buttons
+            document.querySelectorAll('.plan-card button').forEach(button => {
+                button.addEventListener('click', handleSubscribeClick);
+            });
+        }
+
+        async function handleSubscribeClick(event) {
+            const planId = event.target.dataset.planId;
+            const planName = event.target.dataset.planName;
+            const billingInterval = event.target.dataset.billingInterval;
+
+            if (planName === 'Enterprise Plan') {
+                showMessage('Thanks for your interest in the Enterprise Plan! We\'ll contact you shortly.', false);
+                // In a real app, you'd send an inquiry to your sales team here.
+                return;
+            }
+
+            showMessage(`Initiating subscription for ${planName} (${billingInterval})...`);
+
+            try {
+                // You might need to fetch the initial user count from your backend or pass it from frontend context
+                const initialUserCount = 1; // Placeholder: replace with actual user count for the organization
+
+                const response = await fetch('/leads2/api/subscriptions/create_checkout_session.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        plan_id: planId,
+                        billing_interval: billingInterval,
+                        initial_user_count: initialUserCount,
+                        organization_name: 'Your Org Name Here' // Replace with actual organization name
+                    })
+                });
+                const result = await response.json();
+
+                if (result.success) {
+                    const options = {
+                        "key": result.data.razorpay_key_id,
+                        "amount": result.data.amount, // Amount is in paisa
+                        "currency": result.data.currency,
+                        "name": "Your CRM Name", // Replace with your CRM name
+                        "description": result.data.description,
+                        "order_id": result.data.razorpay_order_id, // This is the subscription ID from Razorpay
+                        "handler": function (response) {
+                            // This handler function is called when the payment is successful
+                            // The webhook will update your DB, but you can also show success here.
+                            showMessage("Payment successful! Your subscription is now active.", false);
+                            // Redirect to dashboard or subscription management page
+                            window.location.href = '/dashboard.php'; // Replace with your actual dashboard URL
+                        },
+                        "prefill": {
+                            "name": result.data.customer_name,
+                            "email": result.data.customer_email,
+                            "contact": "" // Optional: customer contact number
+                        },
+                        "notes": {
+                            "plan_id": planId,
+                            "billing_interval": billingInterval
+                        },
+                        "theme": { "color": "#007bff" }
+                    };
+                    const rzp = new Razorpay(options);
+                    rzp.open();
+                } else {
+                    showMessage(result.error || 'Failed to initiate subscription.', true);
+                }
+            } catch (error) {
+                showMessage('An error occurred while initiating subscription: ' + error.message, true);
+            }
+        }
+
+        // Toggle billing interval
+        monthlyToggle.addEventListener('click', () => {
+            currentBillingInterval = 'monthly';
+            monthlyToggle.classList.add('active');
+            yearlyToggle.classList.remove('active');
+            renderPlans();
+        });
+
+        yearlyToggle.addEventListener('click', () => {
+            currentBillingInterval = 'yearly';
+            yearlyToggle.classList.add('active');
+            monthlyToggle.classList.remove('active');
+            renderPlans();
+        });
+
+        // Initial fetch and render
+        fetchPlans();
+
+        // --- Redirection Logic (Frontend Check) ---
+        // This is a placeholder. In a real app, you'd check subscription status
+        // on every page load or route change in your SPA.
+        // For simplicity, let's assume if you land on this page, you need a plan.
+        // You might check if the user *already* has an active subscription here
+        // and redirect them away if they do.
+        /*
+        async function checkSubscriptionAndRedirect() {
+            try {
+                const response = await fetch('/api/subscriptions/get_my_subscription.php');
+                const result = await response.json();
+                if (result.success && result.data && (result.data.status === 'active' || result.data.status === 'trialing')) {
+                    // User already has an active subscription, redirect them away from pricing page
+                    window.location.href = '/dashboard.php'; // Replace with your actual dashboard URL
+                }
+            } catch (error) {
+                console.error('Error checking subscription status:', error);
+                // Continue to show pricing page if there's an error, as they might need to subscribe
+            }
+        }
+        checkSubscriptionAndRedirect();
+        */
+
+    </script>
+</body>
+</html>

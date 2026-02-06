@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Webhook & POST Receiver Configuration</title>
+    <link rel="stylesheet" href="../../css/field-visibility.css">
+    <link rel="stylesheet" href="../../css/field-visibility.css">
+    <style>
+:root {
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --primary: #2563eb;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --muted: #6b7280;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 880px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+h2, h3, h4 {
+  margin-top: 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: .4rem;
+}
+
+select, input[type=text] {
+  width: 100%;
+  padding: .6rem .7rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: .95rem;
+}
+
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: .55rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: .9rem;
+}
+
+button.secondary {
+  background: #f1f5f9;
+  color: #000;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+.badge {
+  display: inline-block;
+  padding: .2rem .5rem;
+  font-size: .75rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: var(--primary);
+}
+
+.code {
+  background: #f1f5f9;
+  padding: .5rem;
+  border-radius: 8px;
+  font-size: .8rem;
+  word-break: break-all;
+}
+
+.inline-msg {
+  font-size: .85rem;
+  margin-top: .5rem;
+}
+
+.success { color: var(--success); }
+.error { color: var(--danger); }
+.muted { color: var(--muted); }
+
+.connection-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.connection-actions {
+  display: flex;
+  gap: .5rem;
+  margin-top: .75rem;
+}
+
+.field-mapping {
+    margin-bottom: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem;
+}
+.mapping-row {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+}
+.mapping-row input[type="text"], .mapping-row select {
+    flex: 1;
+}
+.mapping-row .block-separator {
+    flex: none;
+    width: 80px;
+}
+.dynamic-select {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+.dynamic-select select {
+    flex: 1;
+}
+.remove-btn {
+    background: var(--danger);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+.add-dynamic-btn, .add-static-btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+.sequence-actions {
+    margin-top: 0.5rem;
+}
+.custom-field-form {
+    display: none;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <h1>Webhook & POST Receiver Configuration</h1>
+    <form id="configForm">
+        <h2>Select Organization</h2>
+        <label>Organization:
+            <select id="orgSelect" name="org_id" required>
+                <option value="">Loading...</option>
+            </select>
+        </label>
+        <div id="orgInfo" style="display:none; margin-bottom:1em;">
+            <div><b>API Key:</b> <span id="apiKey"></span></div>
+        </div>
+        <div id="connectionsSection" style="display:none; margin-bottom:2em;">
+            <h3>Webhook Connections</h3>
+            <div id="connectionsList"></div>
+            <button type="button" onclick="addConnection()">Add Connection</button>
+        </div>
+        <div id="leadFields" style="display:none; margin-bottom:1em;"></div>
+        <div id="mappingSection" style="display:none;"></div>
+        <!-- Removed global Save Mapping button; now only inside dynamic form -->
+    </form>
+    <div id="result"></div>
+</div>
+<script>
+// 1. Load organizations for dropdown
+fetch('../organizations/my_orgs.php')
+    .then(r => r.json())
+    .then(data => {
+        const select = document.getElementById('orgSelect');
+        select.innerHTML = '<option value="">Select organization</option>';
+        if (data.organizations) {
+            data.organizations.forEach(org => {
+                const opt = document.createElement('option');
+                opt.value = org.id;
+                opt.textContent = org.name;
+                select.appendChild(opt);
+            });
+        }
+    });
+
+// 2. On org select, fetch API key and fields, and show connections
+let currentApiKey = '';
+let currentOrgId = '';
+let connections = [];
+
+document.getElementById('orgSelect').addEventListener('change', function() {
+    const orgId = this.value;
+    currentOrgId = orgId;
+    if (!orgId) {
+        document.getElementById('orgInfo').style.display = 'none';
+        document.getElementById('connectionsSection').style.display = 'none';
+        document.getElementById('leadFields').style.display = 'none';
+        document.getElementById('mappingSection').style.display = 'none';
+        document.getElementById('result').innerHTML = '';
+        return;
+    }
+    // Fetch API key
+    fetch(`../admin/get_api_key.php?org_id=${orgId}`)
+        .then(r => r.json())
+        .then(data => {
+            document.getElementById('orgInfo').style.display = 'block';
+            document.getElementById('apiKey').textContent = data.api_key || '(none)';
+            currentApiKey = data.api_key;
+            // Fetch connections from DB
+            fetch(`get_connections.php?org_id=${orgId}`)
+                .then(r => r.json())
+                .then(connData => {
+                    if (connData.success && Array.isArray(connData.connections)) {
+                        connections = connData.connections.map((c, idx) => ({
+                            id: c.conn_id_num,
+                            conn_id: c.conn_id,
+                            name: c.name,
+                            webhook: `${window.location.origin}/api/external/webhook_receiver_dynamic.php?org_id=${orgId}&conn_id=${c.conn_id}&api_key=${currentApiKey}`
+                        }));
+                    } else {
+                        connections = [];
+                    }
+                    document.getElementById('connectionsSection').style.display = 'block';
+                    renderConnections();
+                });
+            // ...existing code...
+        });
+
+    // ...existing code...
+    // Fetch lead fields
+    fetch(`../leads/get_import_fields.php?org_id=${orgId}`)
+        .then(r => r.json())
+        .then(data => {
+            if (data.error) return;
+            const fieldsDiv = document.getElementById('leadFields');
+            fieldsDiv.innerHTML = '<b>Available Lead Fields:</b><ul>' + data.standardFields.map(f => `<li>${f.label} (${f.id})</li>`).join('') + '</ul>';
+            if (data.customFields && data.customFields.length) {
+                fieldsDiv.innerHTML += '<b>Custom Fields:</b><ul>' + data.customFields.map(f => `<li>${f.label} (${f.id})</li>`).join('') + '</ul>';
+            }
+            fieldsDiv.style.display = 'block';
+        });
+    // Hide mapping UI until a connection is selected
+    document.getElementById('mappingSection').style.display = 'none';
+    document.getElementById('result').innerHTML = '';
+});
+
+function addConnection() {
+  const list = document.getElementById('connectionsList');
+  const div = document.createElement('div');
+  div.className = 'connection-card';
+
+  div.innerHTML = `
+    <label>Connection Name</label>
+    <input type="text" placeholder="Facebook, Google Ads, Website" />
+    <div class="inline-msg muted">Save to generate webhook</div>
+    <div class="connection-actions">
+      <button type="button" onclick="saveNewConnection(this)">Save</button>
+    </div>
+  `;
+
+  list.prepend(div);
+}
+
+function saveNewConnection(btn) {
+  const card = btn.closest('.connection-card');
+  const input = card.querySelector('input');
+  const name = input.value.trim();
+
+  if (!name) {
+    card.querySelector('.inline-msg').textContent = 'Connection name required';
+    card.querySelector('.inline-msg').className = 'inline-msg error';
+    return;
+  }
+
+  fetch('save_connection.php', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ org_id: currentOrgId, name })
+  })
+  .then(r => r.json())
+  .then(res => {
+    if (!res.success) {
+      card.querySelector('.inline-msg').textContent = res.error || 'Failed';
+      card.querySelector('.inline-msg').className = 'inline-msg error';
+      return;
+    }
+
+    connections.push({
+      id: connections.length + 1,
+      conn_id: res.conn_id,
+      name: res.name,
+      webhook: `${location.origin}/api/external/webhook_receiver_dynamic.php?org_id=${currentOrgId}&conn_id=${res.conn_id}&api_key=${currentApiKey}`
+    });
+
+    renderConnections();
+  });
+}
+
+function removeConnection(idx) {
+    const conn = connections[idx];
+    if (!confirm('Are you sure you want to remove this connection?')) return;
+    fetch('delete_connection.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ org_id: currentOrgId, conn_id: conn.conn_id })
+    })
+    .then(r => r.json())
+    .then(res => {
+        if (res.success) {
+            connections.splice(idx, 1);
+            renderConnections();
+        } else {
+            alert(res.error || 'Failed to remove connection');
+        }
+    })
+    .catch(() => {
+        alert('Error removing connection.');
+    });
+}
+
+function renderConnections() {
+  const list = document.getElementById('connectionsList');
+  list.innerHTML = '';
+
+  if (!connections.length) {
+    list.innerHTML = '<div class="muted">No connections yet</div>';
+    return;
+  }
+
+  connections.forEach((conn, idx) => {
+    list.innerHTML += `
+      <div class="connection-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <strong>${conn.name}</strong>
+          <span class="badge">Active</span>
+        </div>
+
+        <div class="code">${window.location.origin}/api/external/webhook_receiver_dynamic.php?org_id=${currentOrgId}&conn_id=${conn.conn_id}</div>
+
+        <div class="connection-actions">
+          <button type="button" class="secondary" onclick="selectConnection(${idx})">Setup Mapping</button>
+          <button type="button" class="danger" onclick="removeConnection(${idx})">Remove</button>
+        </div>
+      </div>
+    `;
+  });
+}
+
+
+function selectConnection(idx) {
+  const conn = connections[idx];
+  const section = document.getElementById('mappingSection');
+
+  section.innerHTML = `
+    <div class="card">
+      <h4>1. Send Test Payload</h4>
+      <div><b>Webhook URL (with API Key):</b></div>
+      <div class="code">${window.location.origin}/api/external/webhook_receiver_dynamic.php?org_id=${currentOrgId}&conn_id=${conn.conn_id}&api_key=${currentApiKey || ''}</div>
+      <button type="button" onclick="fetchTestPayload(${idx})" style="margin-top:1em;">Fetch Test Data</button>
+      <div id="testFields" class="inline-msg muted"></div>
+    </div>
+  `;
+
+  section.style.display = 'block';
+}
+
+
+function fetchTestPayload(idx) {
+    const conn = connections[idx];
+    window._currentMappingConnIdx = idx;
+    fetch(`test_payloads/test_${currentOrgId}_conn_${conn.conn_id}.json?${Date.now()}`)
+        .then(r => r.json())
+        .then(data => {
+            window._testData = data; // Store for addDynamicField
+            const testFieldsDiv = document.getElementById('testFields');
+            // Show Zapier-like mapping UI
+            fetch(`../leads/get_import_fields.php?org_id=${currentOrgId}`)
+                .then(r => r.json())
+                .then(fields => {
+                    if (!fields || (!fields.standardFields && !fields.customFields)) return;
+                    let allFields = (fields.standardFields || []).concat(fields.customFields || []);
+                    // Remove any pseudo-fields like 'create_new'
+                    allFields = allFields.filter(f => f.id !== 'create_new');
+                    // Example mandatory fields (customize as needed)
+                    const mandatoryIds = ['name', 'email'];
+                    let incomingKeys = Object.keys(data);
+                    // Fetch existing mapping
+                    fetch(`get_mapping.php?org_id=${currentOrgId}&conn_id=${conn.conn_id}`)
+                        .then(r => r.json())
+                        .then(mappingData => {
+                            let existingMapping = mappingData.mapping || {};
+                            let mappingHtml = `<h4>Step 2: Map Lead Fields</h4>
+                            <div style="display:flex;gap:2em;align-items:flex-start;">
+                              <div style="flex:1;min-width:220px;">
+                                <b>Lead Fields</b>
+                                <ul style="list-style:none;padding:0;">`;
+                            allFields.forEach(f => {
+                                mappingHtml += `<li style="margin-bottom:1em;">
+                                  <span style="font-weight:600;${mandatoryIds.includes(f.id) ? 'color:#dc2626;' : ''}">${f.label} (${f.id})${mandatoryIds.includes(f.id) ? ' *' : ''}</span>
+                                </li>`;
+                            });
+                            mappingHtml += `</ul>
+                              </div>
+                              <div style="flex:2;min-width:320px;">
+                                <b>Map to Incoming Fields or Custom Value</b>
+                                <div id="mappingForm">`;
+                            allFields.forEach(f => {
+                                let mappingArray = existingMapping[f.id] || [];
+                                // Parse into blocks: [value, sep, value, sep, ...]
+                                let blocks = [];
+                                for (let i = 0; i < mappingArray.length; i += 2) {
+                                    let value = mappingArray[i];
+                                    let sep = mappingArray[i + 1] || '';
+                                    let type = value.startsWith('{{') && value.endsWith('}}') ? 'dynamic' : 'static';
+                                    let blockValue = type === 'dynamic' ? value.slice(2, -2) : value;
+                                    blocks.push({type, value: blockValue, separator: sep});
+                                }
+                                mappingHtml += `<div class="field-mapping" data-field-id="${f.id}">
+                                  <label>${f.label} (${f.id})${mandatoryIds.includes(f.id) ? ' <span style="color:#dc2626;">*</span>' : ''}</label>
+                                  <div class="mapping-container" id="container_${f.id}">`;
+                                // Render blocks
+                                let sample = ''; // For options
+                                blocks.forEach(block => {
+                                    if (block.type === 'static') {
+                                        mappingHtml += `<div class="mapping-row static-block">
+                                          <input type="text" class="block-value" value="${block.value}" placeholder="Static value" />
+                                          <input type="text" class="block-separator" value="${block.separator}" placeholder="Separator after (e.g., space)" style="width:80px;" />
+                                          <button type="button" class="remove-btn" onclick="removeBlock('${f.id}', this)">×</button>
+                                        </div>`;
+                                    } else {
+                                        mappingHtml += `<div class="mapping-row dynamic-block">
+                                          <select class="block-value">
+                                            <option value="">-- Select Incoming Field --</option>
+                                            ${incomingKeys.map(k => {
+                                                let sampleVal = data[k];
+                                                if (typeof sampleVal === 'object') sampleVal = '(object)';
+                                                else if (typeof sampleVal === 'string' && sampleVal.length > 20) sampleVal = sampleVal.substring(0, 20) + '...';
+                                                else sampleVal = String(sampleVal);
+                                                return `<option value="${k}" ${k === block.value ? 'selected' : ''}>${k} (${sampleVal})</option>`;
+                                            }).join('')}
+                                          </select>
+                                          <input type="text" class="block-separator" value="${block.separator}" placeholder="Separator after (e.g., space)" style="width:80px;" />
+                                          <button type="button" class="remove-btn" onclick="removeBlock('${f.id}', this)">×</button>
+                                        </div>`;
+                                    }
+                                });
+                                mappingHtml += `</div>
+                                  <div class="sequence-actions">
+                                    <button type="button" class="add-static-btn" onclick="addStaticBlock('${f.id}')">+ Add Static Value</button>
+                                    <button type="button" class="add-dynamic-btn" onclick="addDynamicBlock('${f.id}')">+ Add Dynamic Field</button>
+                                  </div>
+                                </div>`;
+                            });
+                            mappingHtml += `</div>
+                              </div>
+                            </div>
+                            <button type="button" onclick="addCustomCrmField()">+ Add Custom CRM Field</button>
+                            <div class="custom-field-form" id="customFieldForm">
+                              <label>Field Label: <input type="text" id="customLabel" /></label>
+                              <label>Field Key (snake_case): <input type="text" id="customKey" /></label>
+                              <button type="button" onclick="createCustomField()">Create</button>
+                              <div id="customFieldMsg"></div>
+                            </div>
+                            <button type="button" onclick="saveMapping()" id="saveMappingBtn">Save Mapping</button>
+                                </div>
+                              </div>
+                            </div>`;
+                            testFieldsDiv.innerHTML = mappingHtml;
+                            const saveBtn = document.getElementById('saveMappingBtn');
+                            if (saveBtn) saveBtn.disabled = false;
+                        });
+                });
+        })
+        .catch(() => {
+            document.getElementById('testFields').innerHTML = '<span style="color:red;">No test payload received yet. Please send a test POST to the webhook URL above.</span>';
+        });
+}
+
+function addStaticBlock(fieldId) {
+    const container = document.getElementById(`container_${fieldId}`);
+    const blockHtml = `<div class="mapping-row static-block">
+        <input type="text" class="block-value" placeholder="Static value" />
+        <input type="text" class="block-separator" placeholder="Separator after (e.g., space)" value=" " style="width:80px;" />
+        <button type="button" class="remove-btn" onclick="removeBlock('${fieldId}', this)">×</button>
+    </div>`;
+    container.insertAdjacentHTML('beforeend', blockHtml);
+}
+
+function addDynamicBlock(fieldId) {
+    const container = document.getElementById(`container_${fieldId}`);
+    const data = window._testData || {};
+    const incomingKeys = Object.keys(data);
+    let sample = ''; // Placeholder
+    const blockHtml = `<div class="mapping-row dynamic-block">
+        <select class="block-value">
+            <option value="">-- Select Incoming Field --</option>
+            ${incomingKeys.map(k => {
+                let sampleVal = data[k];
+                if (typeof sampleVal === 'object') sampleVal = '(object)';
+                else if (typeof sampleVal === 'string' && sampleVal.length > 20) sampleVal = sampleVal.substring(0, 20) + '...';
+                else sampleVal = String(sampleVal);
+                return `<option value="${k}">${k} (${sampleVal})</option>`;
+            }).join('')}
+        </select>
+        <input type="text" class="block-separator" placeholder="Separator after (e.g., space)" value=" " style="width:80px;" />
+        <button type="button" class="remove-btn" onclick="removeBlock('${fieldId}', this)">×</button>
+    </div>`;
+    container.insertAdjacentHTML('beforeend', blockHtml);
+}
+
+function removeBlock(fieldId, btn) {
+    const row = btn.closest('.mapping-row');
+    row.remove();
+}
+
+function collectMappingData() {
+    const mapping = {};
+
+    document.querySelectorAll('.field-mapping').forEach(div => {
+        const fieldId = div.dataset.fieldId;
+        const blocks = div.querySelectorAll('.mapping-row');
+        const sources = [];
+
+        blocks.forEach(block => {
+            const valueInput = block.querySelector('.block-value');
+            const sepInput = block.querySelector('.block-separator');
+
+            let value = '';
+
+            // STATIC block
+            if (valueInput.tagName === 'INPUT') {
+                value = valueInput.value; // ❌ no trim
+                if (value !== '') {
+                    sources.push(value);
+                    if (sepInput && sepInput.value !== '') {
+                        sources.push(sepInput.value); // ✅ keep spaces
+                    }
+                }
+            }
+            // DYNAMIC block
+            else {
+                value = valueInput.value;
+                if (value) {
+                    sources.push(`{{${value}}}`);
+                    if (sepInput && sepInput.value !== '') {
+                        sources.push(sepInput.value); // ✅ keep spaces
+                    }
+                }
+            }
+        });
+
+        // Remove trailing separator if exists
+        if (sources.length && typeof sources[sources.length - 1] === 'string') {
+            // optional cleanup, leave if you want exact control
+        }
+
+        if (sources.length) mapping[fieldId] = sources;
+    });
+
+    return mapping;
+}
+
+
+function saveMapping() {
+    const mapping = collectMappingData();
+    // Check mandatory
+    const mandatoryIds = ['name', 'email'];
+    for (let m of mandatoryIds) {
+        if (!mapping[m] || mapping[m].length === 0) {
+            document.getElementById('result').innerHTML = `<span style='color:red;'>Mandatory field ${m} is not mapped.</span>`;
+            return;
+        }
+    }
+    const idx = window._currentMappingConnIdx;
+    const conn = connections[idx];
+    fetch('save_mapping.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            org_id: currentOrgId,
+            conn_id: conn.conn_id,
+            mapping
+        })
+    })
+    .then(r => r.json())
+    .then(res => {
+        document.getElementById('result').innerHTML = `<div class="inline-msg ${res.success ? 'success' : 'error'}">${res.success ? 'Mapping saved successfully' : res.error}</div>`;
+    });
+}
+
+function addCustomCrmField() {
+    document.getElementById('customFieldForm').style.display = 'block';
+}
+
+function createCustomField() {
+    const label = document.getElementById('customLabel').value.trim();
+    const key = document.getElementById('customKey').value.trim();
+    const msgDiv = document.getElementById('customFieldMsg');
+    if (!label || !key) {
+        msgDiv.innerHTML = '<span style="color:red;">Label and key required.</span>';
+        return;
+    }
+    if (!/^[a-z_]+$/.test(key)) {
+        msgDiv.innerHTML = '<span style="color:red;">Key must be snake_case.</span>';
+        return;
+    }
+    // Assume API endpoint exists
+    fetch('../leads/create_custom_field.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ org_id: currentOrgId, label, key })
+    })
+    .then(r => r.json())
+    .then(res => {
+        if (res.success) {
+            // Append to mapping UI
+            const mappingForm = document.getElementById('mappingForm');
+            const newFieldHtml = `<div class="field-mapping" data-field-id="${key}">
+              <label>${label} (${key})</label>
+              <div class="mapping-container" id="container_${key}">
+                <!-- Empty initially -->
+              </div>
+              <div class="sequence-actions">
+                <button type="button" class="add-static-btn" onclick="addStaticBlock('${key}')">+ Add Static Value</button>
+                <button type="button" class="add-dynamic-btn" onclick="addDynamicBlock('${key}')">+ Add Dynamic Field</button>
+              </div>
+            </div>`;
+            mappingForm.insertAdjacentHTML('beforeend', newFieldHtml);
+            document.getElementById('customFieldForm').style.display = 'none';
+            document.getElementById('customLabel').value = '';
+            document.getElementById('customKey').value = '';
+            msgDiv.innerHTML = '';
+        } else {
+            msgDiv.innerHTML = `<span style="color:red;">${res.error}</span>`;
+        }
+    });
+}
+
+// Store test data for dynamic selects
+// In fetchTestPayload, after .then(data => { add: window._testData = data;
+
+</script>
+<script>
+// Prevent form submission (belt & suspenders)
+document.getElementById('configForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+});
+</script>
+</body>
+</html>

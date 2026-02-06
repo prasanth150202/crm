@@ -1,0 +1,37 @@
+<!-- Chart Controls Template -->
+<div class="chart-controls" data-chart-id="{chartId}">
+    <!-- Filter Controls -->
+    <button onclick="App.reports.showFilterModal('{chartId}', 'sources')" title="Filter Sources">
+        <i class="fas fa-filter"></i> Sources
+    </button>
+    
+    <button onclick="App.reports.showFilterModal('{chartId}', 'stages')" title="Filter Stages">
+        <i class="fas fa-filter"></i> Stages
+    </button>
+    
+    <!-- Funnel Sort Controls (only for funnel charts) -->
+    <div class="funnel-sort-controls" style="display: {funnelDisplay};">
+        <button onclick="App.reports.sortFunnel('{chartId}', 'name')" 
+                class="{nameActive}">Name</button>
+        <button onclick="App.reports.sortFunnel('{chartId}', 'value')" 
+                class="{valueActive}">Value</button>
+        <button onclick="App.reports.sortFunnel('{chartId}', 'custom')" 
+                class="{customActive}">Custom</button>
+    </div>
+    
+    <!-- Chart Type Toggle -->
+    <select onchange="App.reports.changeChartType('{chartId}', this.value)">
+        <option value="bar">Bar</option>
+        <option value="line">Line</option>
+        <option value="pie">Pie</option>
+        <option value="funnel">Funnel</option>
+        <option value="combo">Combo</option>
+    </select>
+</div>
+
+<!-- Funnel Items Template -->
+<div class="funnel-container" id="funnel-{chartId}" style="display: {funnelContainerDisplay};">
+    <ul class="funnel-items">
+        <!-- Dynamic funnel items will be inserted here -->
+    </ul>
+</div>

@@ -1,0 +1,13 @@
+{"timestamp":"2026-01-30 05:49:38","level":"INFO","message":"User logged in","context":{"user_id":10,"email":"prashanth@digifyce.com","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 06:09:13","level":"INFO","message":"User logged in","context":{"user_id":10,"email":"prashanth@digifyce.com","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 07:30:08","level":"INFO","message":"User logged in","context":{"user_id":37,"email":"int@pushnova.app","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 07:37:20","level":"INFO","message":"User logged in","context":{"user_id":38,"email":"int@pushnova.app","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 07:39:42","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":39,"ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 07:39:42","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/leads2\/api\/auth\/login.php"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 07:39:43","level":"INFO","message":"User logged in","context":{"user_id":39,"email":"int@pushnova.app","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 07:56:25","level":"WARNING","message":"Failed login attempt","context":{"email":"int@pushnova.app","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 07:56:25","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/leads2\/api\/auth\/login.php"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 07:57:01","level":"INFO","message":"User logged in","context":{"user_id":40,"email":"int@pushnova.app","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 08:41:59","level":"INFO","message":"User logged in","context":{"user_id":43,"email":"int@pushnova.app","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 08:44:40","level":"INFO","message":"User logged in","context":{"user_id":44,"email":"int@pushnova.app","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-01-30 08:54:00","level":"INFO","message":"User logged in","context":{"user_id":46,"email":"int@pushnova.app","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}

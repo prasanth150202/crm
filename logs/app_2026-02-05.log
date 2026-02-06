@@ -1,0 +1,6 @@
+{"timestamp":"2026-02-05 13:16:29","level":"INFO","message":"User logged in","context":{"user_id":10,"email":"prashanth@digifyce.com","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-05 13:17:26","level":"INFO","message":"User logged in","context":{"user_id":47,"email":"prasanth637yf40@gmail.com","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-05 14:15:37","level":"INFO","message":"User logged in","context":{"user_id":47,"email":"prasanth637yf40@gmail.com","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-05 14:22:39","level":"WARNING","message":"Failed login attempt","context":{"email":"prasanth6rfe3740@gmail.comv","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-05 14:22:39","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/leads2\/api\/auth\/login.php"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-05 14:22:46","level":"INFO","message":"User logged in","context":{"user_id":50,"email":"prasanth6rfe3740@gmail.com","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
