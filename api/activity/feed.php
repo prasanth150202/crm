@@ -77,9 +77,18 @@ try {
     $stmt->execute();
     $total = $stmt->fetch()['total'];
     
+    // Sanitize activities output to prevent XSS
+    $sanitized_activities = array_map(function($activity) {
+        foreach ($activity as $key => $value) {
+            if (is_string($value)) {
+                $activity[$key] = htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+            }
+        }
+        return $activity;
+    }, $activities);
     echo json_encode([
         'success' => true,
-        'activities' => $activities,
+        'activities' => $sanitized_activities,
         'total' => $total,
         'limit' => $limit,
         'offset' => $offset
@@ -87,8 +96,9 @@ try {
     
 } catch (Exception $e) {
     http_response_code(500);
+    // Do not echo raw exception message to user
     echo json_encode([
         'success' => false,
-        'error' => 'Failed to fetch activity feed: ' . $e->getMessage()
+        'error' => 'Failed to fetch activity feed.'
     ]);
 }

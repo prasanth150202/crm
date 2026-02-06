@@ -8,8 +8,8 @@ $api->customer->create(array(
   'fail_existing' => "1", 
   'contact'=>'9000090000',
   'notes'=> array(
-    'notes_key_1'=> 'Tea, Earl Grey, Hot',
-    'notes_key_2'=> 'Tea, Earl Grey... decaf'
+    'notes_key_1'=> '<REDACTED>',
+    'notes_key_2'=> '<REDACTED>'
    )
 );
 

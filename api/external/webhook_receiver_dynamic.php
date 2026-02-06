@@ -45,7 +45,7 @@ try {
     $pdo = getDb();
 } catch (Throwable $e) {
     http_response_code(500);
-    exit(json_encode(['error' => 'DB connection failed', 'details' => $e->getMessage()]));
+    exit(json_encode(['error' => 'DB connection failed']));
 }
 
 /* ------------------ VALIDATE ORG + CONN ------------------ */
@@ -100,7 +100,7 @@ try {
     // Log DB error to file as well
     file_put_contents($logFile . '.dberror', $e->getMessage());
     http_response_code(500);
-    exit(json_encode(['error' => 'Payload log failed', 'details' => $e->getMessage()]));
+    exit(json_encode(['error' => 'Payload log failed']));
 }
 
 /* ------------------ LOAD MAPPING ------------------ */
@@ -200,5 +200,5 @@ try {
     // Log the error to the payload log file for debugging
     file_put_contents($logFile . '.leaderror', $e->getMessage());
     http_response_code(500);
-    echo json_encode(['error' => 'Lead insert/update failed', 'details' => $e->getMessage()]);
+    echo json_encode(['error' => 'Lead insert/update failed']);
 }

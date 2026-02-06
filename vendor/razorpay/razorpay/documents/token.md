@@ -14,7 +14,7 @@ $api->payment->fetch($paymentId);
 **Response:**
 ```json
 {
-  "id": "pay_FHfqtkRzWvxky4",
+  "id": "<REDACTED>",
   "entity": "payment",
   "amount": 100,
   "currency": "INR",

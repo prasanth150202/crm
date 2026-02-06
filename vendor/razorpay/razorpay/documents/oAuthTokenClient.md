@@ -11,11 +11,11 @@ $oauth = new OAuthTokenClient();
 $utility = new Utility();
 
 $attributes = [
-   "submerchant_id" => "<SUBMERCHANT_MID>",
-   "timestamp" => floor(microtime(true));
+  "submerchant_id" => "<REDACTED>",
+  "timestamp" => floor(microtime(true));
 ]
 
-$onboarding_signature = $utility->generateOnboardingSignature($attributes, "<YOUR_CLIENT_SECRET>");
+ $onboarding_signature = $utility->generateOnboardingSignature($attributes, "<REDACTED>");
 
 // Not an promise
 $authUrl = $oauth->oauthClient->getAuthURL([

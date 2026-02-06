@@ -29,7 +29,7 @@ Authenticate using your API key and organization ID:
 **Request Body:**
 ```json
 {
-  "api_key": "your-api-key",
+  "api_key": "<REDACTED>",
   "org_id": 1
 }
 ```
@@ -38,7 +38,7 @@ Authenticate using your API key and organization ID:
 ```json
 {
   "success": true,
-  "token": "generated-token",
+  "token": "<REDACTED>",
   "expires_at": "2024-01-01 12:00:00",
   "organization": "Your Org Name"
 }
@@ -48,7 +48,7 @@ Authenticate using your API key and organization ID:
 Include the returned token in the `Authorization` header for all subsequent requests:
 
 ```
-Authorization: Bearer your-token
+Authorization: Bearer <REDACTED>
 ```
 
 
@@ -193,7 +193,7 @@ Available Events:
 {
   "success": true,
   "webhook_id": 1,
-  "secret": "webhook-secret-key",
+  "secret": "<REDACTED>",
   "message": "Webhook created successfully"
 }
 ```
