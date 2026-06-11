@@ -112,5 +112,5 @@ if (Env::get('APP_ENV') === 'production') {
 }
 
 // App version for asset cache-busting — bump this on each deployment
-define('APP_VERSION', '1.0.4');
+define('APP_VERSION', '1.0.5');
 

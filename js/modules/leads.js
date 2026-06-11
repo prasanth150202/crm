@@ -5,7 +5,7 @@ window.hasPermission = function (key) {
 // UI gating for all major lead actions
 document.addEventListener('DOMContentLoaded', () => {
     // Add Lead
-    const addLeadBtn = document.getElementById('addLeadBtn');``
+    const addLeadBtn = document.getElementById('addLeadBtn');
     if (addLeadBtn && !window.hasPermission('create_leads')) {
         addLeadBtn.style.display = 'none';
     }
