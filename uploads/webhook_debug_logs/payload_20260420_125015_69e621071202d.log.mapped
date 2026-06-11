@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "VAP BRAND",
+        "email": "priyas1609@gmail.com",
+        "phone": "p:+917397498736",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Form Name": "DF_BP_Leads_Mar'2026",
+        "Notes": "CREATED",
+        "Platform": "ig"
+    }
+}

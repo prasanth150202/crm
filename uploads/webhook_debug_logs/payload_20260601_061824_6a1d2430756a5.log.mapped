@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Designersabari",
+        "email": "sabaridesigner3@gmail.com",
+        "phone": "p:+919994311367",
+        "company": "Didesizner",
+        "city": "Coimbatore.",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}

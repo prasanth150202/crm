@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Jonny",
+        "email": "prakam@gmail.com",
+        "phone": "p:+919723334323",
+        "city": "Bbb",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "above_\u20b92,00,000"
+    }
+}

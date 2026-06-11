@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Anusaya",
+        "email": "anuu1131@gmail.com",
+        "phone": "7326884102",
+        "company": "Axis bank",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am interested in: Social Media."
+    }
+}

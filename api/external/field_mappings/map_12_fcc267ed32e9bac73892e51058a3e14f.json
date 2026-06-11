@@ -1,0 +1,46 @@
+{
+    "name": [
+        "{{full_name}}",
+        " "
+    ],
+    "email": [
+        "{{email}}",
+        " "
+    ],
+    "phone": [
+        "{{phone_number}}",
+        " "
+    ],
+    "company": [
+        "{{company_name}}",
+        " "
+    ],
+    "city": [
+        "{{city}}",
+        " "
+    ],
+    "source": [
+        "Meta",
+        " "
+    ],
+    "stage_id": [
+        "new",
+        " "
+    ],
+    "custom_ad_name": [
+        "{{ad_name}}",
+        " "
+    ],
+    "custom_form_name": [
+        "{{form_name}}",
+        " "
+    ],
+    "custom_Lead Segment": [
+        "B2B",
+        " "
+    ],
+    "custom_platform": [
+        "{{platform}}",
+        " "
+    ]
+}

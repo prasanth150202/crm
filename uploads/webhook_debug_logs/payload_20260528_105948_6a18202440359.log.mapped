@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Swarna",
+        "email": "subashreesmk@gmail.com",
+        "phone": "917708755119",
+        "company": "Gift galore",
+        "city": "Coimbatore",
+        "source": "Whatsapp",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Return gift business.."
+    }
+}

@@ -1,0 +1,2 @@
+{"timestamp":"2026-04-17 04:50:49","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"2409:40f4:3117:423c:b076:af71:8b59:e086"},"ip":"2409:40f4:3117:423c:b076:af71:8b59:e086","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-17 13:14:57","level":"INFO","message":"User logged in","context":{"user_id":15,"email":"sarathkumar.m@digifyce.com","ip":"103.186.151.39"},"ip":"103.186.151.39","uri":"\/api\/auth\/login.php","method":"POST"}

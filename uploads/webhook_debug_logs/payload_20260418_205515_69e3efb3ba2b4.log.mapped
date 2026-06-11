@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Vijay",
+        "email": "rajumegan1966@gmail.com",
+        "phone": "p:+916382055822",
+        "city": "Vellore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Form Name": "DF_BP_Leads_Mar'2026",
+        "Notes": "CREATED",
+        "Platform": "ig"
+    }
+}

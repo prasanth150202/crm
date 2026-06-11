@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Veni shrilaya",
+        "email": "sveniasv@gmail.com",
+        "phone": "9962719315",
+        "company": "Kritzy store",
+        "city": "Namakkal",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "We are a toy and stationary shop"
+    }
+}

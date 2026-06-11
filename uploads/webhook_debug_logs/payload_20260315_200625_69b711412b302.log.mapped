@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "B A L A",
+        "email": "smartbalab@mail.com",
+        "phone": "p:6382622036",
+        "city": "City",
+        "source": "Digital",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "as:120241830699970287",
+        "form_name": "Techara_Students",
+        "platform": "ig"
+    }
+}

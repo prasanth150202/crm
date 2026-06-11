@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Jeri",
+        "email": "anandchristopher123@gmail.com",
+        "phone": "p:6383-224197",
+        "company": "JERI BEAUTY AND BRIDAL ACADEMY",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}

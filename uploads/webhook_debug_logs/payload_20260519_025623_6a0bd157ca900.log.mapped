@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Shruthi",
+        "email": "freshminds.cbe@gmail.com",
+        "phone": "p:+918754133990",
+        "company": "Plants buddy",
+        "title": "manufacturer",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "both"
+    }
+}

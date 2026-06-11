@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Rajan R",
+        "email": "rajanr.saa@gmail.com",
+        "phone": "p:+919095032052",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "Market",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "fb"
+    }
+}

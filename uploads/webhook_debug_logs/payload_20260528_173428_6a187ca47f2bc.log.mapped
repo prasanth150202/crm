@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Nivedhapriya Anand",
+        "email": "nivedhapriya05@gmail.com",
+        "phone": "p:+918098790978",
+        "company": "ANA EDIFY",
+        "title": "manufacturer",
+        "city": "Tirupur",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "sales(website)"
+    }
+}

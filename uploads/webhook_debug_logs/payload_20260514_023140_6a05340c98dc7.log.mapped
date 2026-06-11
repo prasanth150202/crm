@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Sekar",
+        "email": "gnanasekarjam@gmail.com",
+        "phone": "p:+919551277773",
+        "company": "Aquaguard water purifier",
+        "city": "chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "below_\u20b91,00,000"
+    }
+}

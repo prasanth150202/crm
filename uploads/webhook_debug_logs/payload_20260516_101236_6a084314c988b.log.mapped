@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "vibin s",
+        "email": "vibins0503@gmail.com",
+        "phone": "+9790428614",
+        "company": "VIORA",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Software"
+    }
+}

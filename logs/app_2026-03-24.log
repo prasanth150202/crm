@@ -1,0 +1,4 @@
+{"timestamp":"2026-03-24 04:36:57","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"103.114.211.125"},"ip":"103.114.211.125","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-24 04:40:32","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"2401:4900:88e4:5cea:cd8c:8245:47a6:ca39"},"ip":"2401:4900:88e4:5cea:cd8c:8245:47a6:ca39","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-24 06:10:26","level":"WARNING","message":"Failed login attempt","context":{"email":"ragav@digifyce.com","ip":"103.114.211.125"},"ip":"103.114.211.125","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-24 06:10:26","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/api\/auth\/login.php"},"ip":"103.114.211.125","uri":"\/api\/auth\/login.php","method":"POST"}

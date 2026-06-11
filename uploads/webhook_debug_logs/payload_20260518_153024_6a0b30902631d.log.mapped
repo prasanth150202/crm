@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Karthi S",
+        "email": "kitchenmyna@gmail.com",
+        "phone": "p:+919677197769",
+        "company": "Myna Kitchen | Everyday Food Partner",
+        "title": "manufacturer",
+        "city": "chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "both"
+    }
+}

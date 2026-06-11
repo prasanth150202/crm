@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Shanmathi",
+        "email": "shanmathi2106@gmail.com",
+        "phone": "9080068123",
+        "company": "Blisz organic",
+        "city": "Coimbatore",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "We are the manufacturer of baby food products"
+    }
+}

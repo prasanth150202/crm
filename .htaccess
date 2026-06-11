@@ -1,0 +1,42 @@
+RewriteEngine On
+
+# Redirect to dashboard.php if not a file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ dashboard.php [QSA,L]
+
+# Block access to sensitive files
+<FilesMatch "(^\.env|^\.git|composer\.(json|lock)|package(-lock)?\.json|README\.md|\.gitignore)">
+    Require all denied
+</FilesMatch>
+
+# Block access to sensitive directories
+RewriteRule ^(?:\.git|logs|database|tests|scripts|vendor)(?:/|$) - [F,L,NC]
+
+# Block direct access to PHP files in API except via proper routing
+# (leave this open for AJAX calls, just protect dirs above)
+
+# Disable directory listing
+Options -Indexes
+
+# Security headers
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Cache static assets for 1 year
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>

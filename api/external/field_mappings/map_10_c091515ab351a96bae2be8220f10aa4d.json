@@ -1,0 +1,38 @@
+{
+    "name": [
+        "{{full_name}}",
+        " "
+    ],
+    "email": [
+        "{{email}}",
+        " "
+    ],
+    "phone": [
+        "{{phone}}",
+        " "
+    ],
+    "company": [
+        "{{what_is_your_company_name?}}",
+        " "
+    ],
+    "city": [
+        "{{city}}",
+        " "
+    ],
+    "source": [
+        "Digital",
+        " "
+    ],
+    "stage_id": [
+        "new",
+        " "
+    ],
+    "custom_Form Name": [
+        "{{form_name}}",
+        " "
+    ],
+    "custom_Platform": [
+        "{{platform}}",
+        " "
+    ]
+}

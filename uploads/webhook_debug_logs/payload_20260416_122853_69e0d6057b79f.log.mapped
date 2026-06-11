@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Mohamed Azath",
+        "email": "guestmail004@nomail.com",
+        "phone": "9791511991",
+        "company": "Southern Maligai",
+        "city": "Pudukkottai",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Running retail grocery store since 1956, launched delivery app recently"
+    }
+}

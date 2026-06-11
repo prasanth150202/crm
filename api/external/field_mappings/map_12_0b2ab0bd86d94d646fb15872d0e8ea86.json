@@ -1,0 +1,26 @@
+{
+    "name": [
+        "{{name}}",
+        " "
+    ],
+    "email": [
+        "{{email}}",
+        " "
+    ],
+    "phone": [
+        "{{phone}}",
+        " "
+    ],
+    "city": [
+        "{{city}}",
+        " "
+    ],
+    "source": [
+        "Kongu College ",
+        " "
+    ],
+    "custom_Qualification": [
+        "{{qualification}}",
+        " "
+    ]
+}

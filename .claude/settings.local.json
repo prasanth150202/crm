@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php:*)",
+      "Bash(xargs grep:*)",
+      "Bash(xargs head:*)",
+      "Bash(mysql -u root -e \"SELECT id, org_id, title, chart_type, created_at FROM custom_charts ORDER BY created_at DESC LIMIT 10;\" crm)",
+      "Bash(/c/xampp/mysql/bin/mysql.exe -u root -e \"SELECT id, org_id, title, chart_type, global, created_at FROM custom_charts ORDER BY created_at DESC LIMIT 10;\" crm)",
+      "Bash(/c/xampp/mysql/bin/mysql.exe -u root --host=127.0.0.1 -e \"SELECT id, org_id, title, chart_type, global, created_at FROM custom_charts ORDER BY created_at DESC LIMIT 10;\" crm 2>&1)",
+      "Bash(tasklist)",
+      "Bash(/c/xampp/mysql/bin/mysqladmin.exe -u root status)",
+      "Bash(grep -v \"//.*localStorage\")",
+      "Bash(Get-ChildItem -Recurse -Force)",
+      "Bash(Select-Object FullName)",
+      "Bash(Get-ChildItem -Path \"c:\\\\xampp\\\\htdocs\\\\leads2\" -Recurse -Directory)",
+      "Bash(Select-Object -First 30)",
+      "PowerShell(head -30)",
+      "Bash(xargs wc -l)",
+      "Bash(powershell -Command \"\\(Get-Content includes/modals.php -Raw\\) -replace 'rounded-md', 'rounded-xl' -replace 'rounded-lg px-4 pt-5 pb-4', 'rounded-2xl px-4 pt-5 pb-4' -replace 'bg-gray-50 p-4 rounded-md mb-6 border border-gray-200', 'bg-slate-50 p-4 rounded-xl mb-6 border border-slate-200' -replace 'text-gray-900\\\\\" id=\\\\\"modal-title', 'text-slate-900\\\\\" id=\\\\\"modal-title' | Set-Content includes/modals.php -Encoding utf8\")",
+      "Bash(Get-ChildItem -Path \"c:\\\\xampp\\\\htdocs\\\\leads2\" -Force)",
+      "Bash(Select-Object Name, PSIsContainer)",
+      "Bash(mysql -u root -e \"DESCRIBE leads2.custom_charts;\")"
+    ]
+  }
+}

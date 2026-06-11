@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "WILSON-GEORGE",
+        "email": "madhaagencies3110@gmail.com",
+        "phone": "p:+918098845333",
+        "company": "Madha Agencies",
+        "city": "Vedasandur",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "offline_stores"
+    }
+}

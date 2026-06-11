@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Bharathi",
+        "email": "bharathi2020@gmail.com",
+        "phone": "+919976942759",
+        "company": "Instrength",
+        "website": "Instrength.org",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Needs a audit about my website"
+    }
+}

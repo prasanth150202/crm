@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Reena",
+        "email": "shop@ecoberry.in",
+        "phone": "9886816953",
+        "company": "EcoBerry",
+        "city": "Erode",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Digital Mar"
+    }
+}

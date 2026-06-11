@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Thiyagu R",
+        "email": "rthiyagu1993@gmail.com",
+        "phone": "p:+918807495040",
+        "company": "Shanthi Gears",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "real_estate"
+    }
+}

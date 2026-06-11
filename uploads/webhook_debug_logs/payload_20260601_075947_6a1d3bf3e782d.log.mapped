@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Priyanka",
+        "email": "priyankavivekanandhan95@gmail.com",
+        "phone": "9688489435",
+        "company": "The glam fashion",
+        "city": "Coimbatore",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "We are fashion brand selling online clothes"
+    }
+}

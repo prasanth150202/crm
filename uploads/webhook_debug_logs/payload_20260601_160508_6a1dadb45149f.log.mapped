@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Shabana",
+        "email": "aadhifshomemade@gmail.com",
+        "phone": "+919500887900",
+        "company": "Aadhif's homemade LLP",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Sales increase"
+    }
+}

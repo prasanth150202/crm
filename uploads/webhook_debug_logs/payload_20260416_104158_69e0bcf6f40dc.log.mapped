@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Test",
+        "email": "testmailer@emaily.com",
+        "phone": "1234567890",
+        "company": "Tester Inc",
+        "city": "Coimbatore",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "We test stuff"
+    }
+}

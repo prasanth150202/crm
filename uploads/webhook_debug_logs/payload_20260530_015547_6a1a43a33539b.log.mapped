@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Viknesh",
+        "email": "meltartisanchocolates@gmail.com",
+        "phone": "9787977790",
+        "company": "Melt farm foods",
+        "city": "Hosur",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "We are a manufacturer of bean to bar chocolates and cocoa based products"
+    }
+}

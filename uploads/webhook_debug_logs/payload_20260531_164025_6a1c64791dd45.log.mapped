@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Msr Rohit",
+        "email": "msrco0253@gmail.com",
+        "phone": "p:+919629899962",
+        "company": "MSR CONSTRUCTION",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}

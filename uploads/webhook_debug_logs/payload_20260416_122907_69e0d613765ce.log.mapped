@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Vijay",
+        "email": "guestmail013@nomail.com",
+        "phone": "7418087484",
+        "company": "Murugan arul store",
+        "city": "Dindigul district \nOddanchatram post",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "It is a statue business \nPolyresin and brass material"
+    }
+}

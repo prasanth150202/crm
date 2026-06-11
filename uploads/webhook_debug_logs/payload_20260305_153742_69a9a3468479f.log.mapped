@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "RAGAVI P",
+        "email": "ragavi0725@gmail.com",
+        "phone": "+1918825416077",
+        "company": "Digifyce",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am interested in: Web Development."
+    }
+}

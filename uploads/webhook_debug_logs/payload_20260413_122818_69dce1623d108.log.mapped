@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Kathir",
+        "email": "kathirveln304@gmail.com",
+        "phone": "p:+919150153954",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Form Name": "DF_BP_Leads_Mar'2026",
+        "Notes": "CREATED",
+        "Platform": "ig"
+    }
+}

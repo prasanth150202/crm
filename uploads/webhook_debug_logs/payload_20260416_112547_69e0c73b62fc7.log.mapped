@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Sona",
+        "email": "stevejobbers@google.com",
+        "phone": "917780127781",
+        "company": "Idk just testing",
+        "city": "African Society in Little India in Singapore",
+        "source": "Whatsapp",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Business_B"
+    }
+}

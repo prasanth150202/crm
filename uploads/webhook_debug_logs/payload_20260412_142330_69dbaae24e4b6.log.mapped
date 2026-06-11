@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Kumar",
+        "email": "mkptec@gmail.com",
+        "phone": "p:+918667552612",
+        "city": "coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "spot the right setup",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "fb"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Divya kamatchi.",
+        "email": "guestmail009@nomail.com",
+        "phone": "6384931509",
+        "company": "Bussiness",
+        "city": "krithiknutrifoods",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Nagercoil"
+    }
+}

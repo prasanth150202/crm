@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "sethuraman",
+        "email": "accounts@sgacars.in",
+        "phone": "p:+917373633066",
+        "company": "SGA cars India private limited",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "saas_applications"
+    }
+}

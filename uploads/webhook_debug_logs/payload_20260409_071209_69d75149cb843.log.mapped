@@ -1,0 +1,16 @@
+{
+    "standard": {
+        "name": "Aalam Sundar",
+        "email": "aalamsundar@gmail.com",
+        "phone": "p:+919123567672",
+        "city": "Coimbatore",
+        "source": "Digital",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "as:120241830699970287",
+        "form_name": "Techara_Students",
+        "Lead Segment": "B2C",
+        "platform": "fb"
+    }
+}

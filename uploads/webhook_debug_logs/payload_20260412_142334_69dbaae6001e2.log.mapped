@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Sanjay Sanjay",
+        "email": "sandhak120@gmail.com",
+        "phone": "p:+919589219163",
+        "city": "Sanjay",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "Market",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "ig"
+    }
+}

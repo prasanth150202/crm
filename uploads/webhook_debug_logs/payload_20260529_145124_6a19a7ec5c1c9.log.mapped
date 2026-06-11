@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Ashik A",
+        "email": "ashikashikmi@gmail.com",
+        "phone": "p:+916380791783",
+        "company": "Habibi agency",
+        "city": "Kerela",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}

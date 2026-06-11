@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "SVibin Vbin",
+        "email": "vibins0503@gmail.com",
+        "phone": "p:+919790428614",
+        "company": "Viora",
+        "title": "manufacturer",
+        "city": "Erode",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "sales(website)"
+    }
+}

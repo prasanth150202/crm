@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "ANNAMALAI",
+        "email": "malaianna609@gmail.com",
+        "phone": "p:+917397148947",
+        "company": "Malai",
+        "city": "Tiruvannamalai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "below_\u20b91,00,000"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "DHANUSH A",
+        "email": "dhanusharumugam2005@gmail.com",
+        "phone": "8637649990",
+        "company": "Digifyce",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am interested in: Web Development, AI Automation."
+    }
+}

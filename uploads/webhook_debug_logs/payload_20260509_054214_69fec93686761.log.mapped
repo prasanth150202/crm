@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Gurmeet Gardgil",
+        "email": "gurmeet@mufasaman.com",
+        "phone": "p:+919990866333",
+        "city": "New delhin",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "\u20b91,00,000_\u2013_\u20b92,00,000"
+    }
+}

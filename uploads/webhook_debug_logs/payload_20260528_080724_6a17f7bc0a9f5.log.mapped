@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Yuva",
+        "email": "reachtalentsolutions2023@gmail.com",
+        "phone": "p:+919710022999",
+        "company": "RTS",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}

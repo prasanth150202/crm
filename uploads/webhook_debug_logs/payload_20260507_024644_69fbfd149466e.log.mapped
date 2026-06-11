@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Satheesh Kris",
+        "email": "satheeshslm@gmail.com",
+        "phone": "+91 94440 69919",
+        "company": "Naval foods",
+        "website": "Kaapistop.com",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Looking for digital marketing partner"
+    }
+}

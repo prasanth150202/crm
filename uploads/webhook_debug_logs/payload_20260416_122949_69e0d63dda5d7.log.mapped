@@ -1,0 +1,12 @@
+{
+    "standard": {
+        "name": "Arun",
+        "email": "guestmail012@nomail.com",
+        "phone": "7502773115",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "."
+    }
+}

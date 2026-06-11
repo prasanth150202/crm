@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Mohsin Ahmad",
+        "email": "khanmohsin5567@gmail.com",
+        "phone": "p:+918491965351",
+        "city": "Delhi",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "Market",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "ig"
+    }
+}

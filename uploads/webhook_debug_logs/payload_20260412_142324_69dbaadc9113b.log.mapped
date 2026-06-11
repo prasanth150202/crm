@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Adhi Adhi",
+        "email": "adhimoolam312@gmail.com",
+        "phone": "p:+919944312312",
+        "city": "Cuddalore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "Market",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "fb"
+    }
+}

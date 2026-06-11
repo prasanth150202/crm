@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "vihan housing parthiban",
+        "email": "vihanhousing@gmail.com",
+        "phone": "p:+917708878999",
+        "company": "Construction",
+        "city": "Tirupur",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "real_estate"
+    }
+}

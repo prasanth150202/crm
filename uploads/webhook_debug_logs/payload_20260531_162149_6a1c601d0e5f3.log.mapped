@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Deepak",
+        "email": "deepak.dxx@gmail.com",
+        "phone": "919597467628",
+        "company": "Velmora foods",
+        "city": "Erode",
+        "source": "Whatsapp",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Ready to cook soup mix powder and guva pickles"
+    }
+}

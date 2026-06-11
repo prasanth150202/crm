@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Surya",
+        "email": "surya.p.dr.km@gmail.com",
+        "phone": "p:+919786007774",
+        "company": "Surya",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads"
+    }
+}

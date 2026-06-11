@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Jatin ahuja",
+        "email": "jatinahuja289@gmail.com",
+        "phone": "8799",
+        "company": "NA",
+        "website": "Ecommerce",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Student management system \r\nCollege management system"
+    }
+}

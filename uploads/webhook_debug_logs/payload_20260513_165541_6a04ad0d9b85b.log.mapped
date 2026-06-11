@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "YogavA wear",
+        "email": "yogavawear@gmail.com",
+        "phone": "8122643297",
+        "company": "YogavA wear",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Tshirt business"
+    }
+}

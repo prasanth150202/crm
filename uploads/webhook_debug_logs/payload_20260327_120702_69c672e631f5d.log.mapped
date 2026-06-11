@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Om Vishal Singh",
+        "email": "sunny786sin@gmail.com",
+        "phone": "p:+919044092097",
+        "company": "Bhojpuri Film Industry",
+        "city": "Navi Mumbai (New Mumbai)",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "TECH_ARA_VIDEO_S_v09 3",
+        "form_name": "Techara_B2B_Mar'25",
+        "Lead Segment": "B2B",
+        "platform": "fb"
+    }
+}

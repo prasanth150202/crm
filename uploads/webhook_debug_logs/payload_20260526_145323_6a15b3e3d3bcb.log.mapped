@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Lokesh Rahul",
+        "email": "lokeshnarayanasamy25@gmail.com",
+        "phone": "p:+919080284387",
+        "company": "Cenizas ai technology",
+        "city": "Tiruttani",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "saas_applications"
+    }
+}

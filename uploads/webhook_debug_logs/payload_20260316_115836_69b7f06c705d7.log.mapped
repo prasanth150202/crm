@@ -1,0 +1,16 @@
+{
+    "standard": {
+        "name": "Kumar",
+        "email": "mgrjayalailtha007@gmail.com",
+        "phone": "917708804142",
+        "city": "Dharmapuri",
+        "source": "Digital",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "120241830699970287",
+        "form_name": "Techara_Students",
+        "Lead Segment": "B2C",
+        "platform": "fb"
+    }
+}

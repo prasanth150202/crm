@@ -1,0 +1,1 @@
+{"timestamp":"2026-02-20 07:08:47","level":"INFO","message":"User logged in","context":{"user_id":10,"email":"prashanth@digifyce.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}

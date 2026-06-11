@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Arunkumar",
+        "email": "akpropertiescovai23@gmail.com",
+        "phone": "p:+919363022425",
+        "company": "Covai square property",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "real_estate"
+    }
+}

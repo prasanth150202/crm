@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Test",
+        "email": "testertest@gmail.com",
+        "phone": "88226622288",
+        "company": "Bob Inc",
+        "city": "India",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Business A"
+    }
+}

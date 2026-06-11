@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Kiran",
+        "email": "kirancherian04@gmail.com",
+        "phone": "p:+918838119364",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "spot the right setup",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "ig"
+    }
+}

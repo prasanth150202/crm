@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Gayathri Senthil",
+        "email": "gayug3223@gmail.com",
+        "phone": "p:+918610941099",
+        "company": "Distance between",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "offline_stores"
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Chandru",
+        "email": "chandrusasi10@gmail.com",
+        "phone": "p:+919843010343",
+        "city": "Krishnagiri",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "Market",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "ig"
+    }
+}

@@ -1,0 +1,6 @@
+{"timestamp":"2026-04-29 10:53:17","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-29 12:54:17","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":14,"ip":"::1"},"ip":"::1","uri":"\/crm-final\/\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-29 12:54:17","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/crm-final\/\/api\/auth\/login.php"},"ip":"::1","uri":"\/crm-final\/\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-29 12:54:24","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":14,"ip":"::1"},"ip":"::1","uri":"\/crm-final\/\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-29 12:54:24","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/crm-final\/\/api\/auth\/login.php"},"ip":"::1","uri":"\/crm-final\/\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-29 12:54:37","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"::1"},"ip":"::1","uri":"\/crm-final\/\/api\/auth\/login.php","method":"POST"}

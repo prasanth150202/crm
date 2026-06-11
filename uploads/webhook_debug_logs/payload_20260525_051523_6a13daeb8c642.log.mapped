@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "John Djm",
+        "email": "teamecofaz@gmail.com",
+        "phone": "p:+918675338902",
+        "company": "Ess Arr Kay Garment's",
+        "city": "Tirupur",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "offline_stores"
+    }
+}

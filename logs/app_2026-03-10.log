@@ -1,0 +1,1 @@
+{"timestamp":"2026-03-10 04:35:59","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"2401:4900:88e8:1884:d8dd:5daa:816a:5c02"},"ip":"2401:4900:88e8:1884:d8dd:5daa:816a:5c02","uri":"\/api\/auth\/login.php","method":"POST"}

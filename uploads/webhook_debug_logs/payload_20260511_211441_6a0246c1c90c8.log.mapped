@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "ShreeVastra Boutique",
+        "email": "rajeswari.shaktheev@gmail.com",
+        "phone": "p:+919791033939",
+        "company": "Shreevastra_boutique",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "below_\u20b91,00,000"
+    }
+}

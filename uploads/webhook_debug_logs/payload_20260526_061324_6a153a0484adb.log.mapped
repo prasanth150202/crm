@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "\ud835\ude1a",
+        "email": "sujansakthi8080@gmail.com",
+        "phone": "p:+919500543454",
+        "company": "Crown clothing",
+        "title": "manufacturer",
+        "city": "Tiruppur",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "both"
+    }
+}

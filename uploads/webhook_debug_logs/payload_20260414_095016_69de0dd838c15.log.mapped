@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Srinivasan",
+        "email": "gurusrinivasan36@gmail.com",
+        "phone": "p:+919080552885",
+        "city": "Salem",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Form Name": "DF_BP_Leads_Mar'2026",
+        "Notes": "CREATED",
+        "Platform": "fb"
+    }
+}

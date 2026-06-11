@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Jenish CJ",
+        "email": "jenishjohn345@gmail.com",
+        "phone": "p:+919486406360",
+        "company": "John tea traders",
+        "title": "manufacturer",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "sales(website)"
+    }
+}

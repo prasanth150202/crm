@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Praveen",
+        "email": "anitha.gp1987@gmail.com",
+        "phone": "p:+919840584571",
+        "company": "The one",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "below_\u20b91,00,000"
+    }
+}

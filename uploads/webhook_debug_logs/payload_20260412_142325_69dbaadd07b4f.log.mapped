@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Niva",
+        "email": "nathniva555@gmail.com",
+        "phone": "p:+919707302966",
+        "city": "Mumbai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "Market",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "ig"
+    }
+}

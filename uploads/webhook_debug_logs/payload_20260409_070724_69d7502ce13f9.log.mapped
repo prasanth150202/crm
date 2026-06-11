@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "<test lead: dummy data for full_name>",
+        "email": "test@meta.com",
+        "phone": "p:<test lead: dummy data for phone_number>",
+        "city": "<test lead: dummy data for city>",
+        "source": "Digital",
+        "stage_id": "new"
+    },
+    "custom": {
+        "form_name": "Techara_Students",
+        "Lead Segment": "B2C"
+    }
+}

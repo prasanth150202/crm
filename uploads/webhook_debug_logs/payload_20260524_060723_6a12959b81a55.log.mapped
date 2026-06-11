@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Prince Ayanikkal",
+        "email": "Puressenz.co@gmail.com",
+        "phone": "p:+919442611969",
+        "company": "Puressenz",
+        "title": "manufacturer",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "sales(website)"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Pavithra",
+        "email": "pavithraduraii94@gmail.com",
+        "phone": "7338992407",
+        "company": "Thvasta",
+        "city": "Chennai",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Handloom and handcrafted Sarees"
+    }
+}

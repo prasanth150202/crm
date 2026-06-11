@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Balaji G",
+        "email": "findbalaji205@gmail.com",
+        "phone": "p:+919751938591",
+        "company": "Aruthura medicals lab and clinic",
+        "city": "Cuddalore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "offline_stores"
+    }
+}

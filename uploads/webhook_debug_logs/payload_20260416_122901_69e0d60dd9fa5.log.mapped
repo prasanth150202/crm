@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Jessy",
+        "email": "guestmail011@nomail.com",
+        "phone": "6385369261",
+        "company": "Al-hajj exim",
+        "city": "Trichy",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Exporting"
+    }
+}

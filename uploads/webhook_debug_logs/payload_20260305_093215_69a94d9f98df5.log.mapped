@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Kavin",
+        "email": "pranav.kp2303@gmail.com",
+        "phone": "+918344887281",
+        "company": "Fresher",
+        "website": "http:\/\/localhost:8000 (or http:\/\/127.0.0.1:8000)",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Smart Home Energy Behavior Analytics Dashboard\r\nTechnologies: Python, FastAPI, JavaScript, TailwindCSS, SQLite, Chart.js, JWT, Regex\r\n\r\nBuilt a full-stack energy monitoring system to analyze, visualize, and predict home electricity consumption using real-time simulated data and interactive dashboard components.\r\nDeveloped an AI Cost Predictor that algorithmically estimates upcoming monthly electricity bills based on user appliance inventory, achieving an 88% confidence score.\r\nEngineered a big-data visualization pipeline using a custom downsampling algorithm to seamlessly render over 100,000 data points in the browser via Chart.js without latency.\r\nCreated an automated PDF bill extraction tool using Python (pypdf and Regex) to instantly extract \"Units Consumed\" and \"Total Amount\" from uploaded electricity bills.\r\nImplemented secure user authentication using PBKDF2-SHA256 password hashing and JWT (JSON Web Tokens) for safe session management.\r\nDesigned a premium 'glassmorphism' responsive UI enabling users to manage appliance registries and compare energy savings through an interactive \"What-If\" calculator."
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Maheshwari",
+        "email": "mahivjk02@gmail.com",
+        "phone": "7092524555",
+        "company": "Mahi magicz makeover",
+        "city": "Coimbatore",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Makeup"
+    }
+}

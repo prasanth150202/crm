@@ -1,0 +1,6 @@
+{"timestamp":"2026-03-30 06:01:02","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"2401:4900:8fe7:9d86:70ef:1239:d24f:de25"},"ip":"2401:4900:8fe7:9d86:70ef:1239:d24f:de25","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-30 06:28:57","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":14,"ip":"103.130.91.53"},"ip":"103.130.91.53","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-30 06:28:57","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/api\/auth\/login.php"},"ip":"103.130.91.53","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-30 06:29:10","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":14,"ip":"103.130.91.53"},"ip":"103.130.91.53","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-30 06:29:10","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/api\/auth\/login.php"},"ip":"103.130.91.53","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-30 06:29:19","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"103.130.91.53"},"ip":"103.130.91.53","uri":"\/api\/auth\/login.php","method":"POST"}

@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "John Ajay",
+        "email": "office@angelindus.com",
+        "phone": "p:+918807625810",
+        "company": "Angelgojo industries pvt ltd",
+        "title": "manufacturer",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "sales(website)"
+    }
+}

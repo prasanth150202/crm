@@ -1,0 +1,2 @@
+{"timestamp":"2026-04-21 07:08:47","level":"INFO","message":"User logged in","context":{"user_id":16,"email":"abikumar.g@digifyce.com","ip":"103.186.151.39"},"ip":"103.186.151.39","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-21 10:27:36","level":"INFO","message":"User logged in","context":{"user_id":15,"email":"sarathkumar.m@digifyce.com","ip":"103.186.151.39"},"ip":"103.186.151.39","uri":"\/api\/auth\/login.php","method":"POST"}

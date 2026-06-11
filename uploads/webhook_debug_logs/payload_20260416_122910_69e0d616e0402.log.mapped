@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Gowtham Prakasam",
+        "email": "gauthamprakash92@gmail.com",
+        "phone": "919940091010",
+        "company": "TN Travels",
+        "city": "Vellore",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Check my voice notes"
+    }
+}

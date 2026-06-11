@@ -1,0 +1,42 @@
+{
+    "name": [
+        "{{full_name}}",
+        " "
+    ],
+    "email": [
+        "{{email}}",
+        " "
+    ],
+    "phone": [
+        "{{phone_number}}",
+        " "
+    ],
+    "city": [
+        "{{city}}",
+        " "
+    ],
+    "source": [
+        "Digital",
+        " "
+    ],
+    "stage_id": [
+        "new",
+        " "
+    ],
+    "custom_ad_name": [
+        "{{adset_id}}",
+        " "
+    ],
+    "custom_form_name": [
+        "{{form_name}}",
+        " "
+    ],
+    "custom_Lead Segment": [
+        "B2C",
+        " "
+    ],
+    "custom_platform": [
+        "{{platform}}",
+        " "
+    ]
+}

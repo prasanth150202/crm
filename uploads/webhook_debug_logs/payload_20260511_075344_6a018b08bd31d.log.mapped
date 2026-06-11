@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "R o c k y",
+        "email": "rakaeshrocky23@gmail.com",
+        "phone": "p:+919585189000",
+        "company": "Style secrets",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "below_\u20b91,00,000"
+    }
+}

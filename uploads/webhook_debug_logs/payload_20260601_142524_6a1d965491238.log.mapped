@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Latha Vivek",
+        "email": "lathagowda22@gmail.com",
+        "phone": "p:+918431987720",
+        "company": "Nirvighna Apparel\u2019s Pvt Ltd",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "offline_stores"
+    }
+}

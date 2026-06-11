@@ -1,0 +1,5 @@
+{"timestamp":"2026-04-08 04:35:16","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"2401:4900:88e4:5887:1911:b237:f9c5:977c"},"ip":"2401:4900:88e4:5887:1911:b237:f9c5:977c","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-08 06:08:28","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":10,"ip":"103.114.211.244"},"ip":"103.114.211.244","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-08 06:08:28","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/api\/auth\/login.php"},"ip":"103.114.211.244","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-08 06:08:33","level":"INFO","message":"User logged in","context":{"user_id":10,"email":"prashanth@digifyce.com","ip":"103.114.211.244"},"ip":"103.114.211.244","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-04-08 06:16:01","level":"INFO","message":"User logged in","context":{"user_id":12,"email":"prasanthsk1502@gmail.com","ip":"103.114.211.244"},"ip":"103.114.211.244","uri":"\/api\/auth\/login.php","method":"POST"}

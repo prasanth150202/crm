@@ -1,0 +1,42 @@
+{
+    "name": [
+        "{{full_name}}",
+        " "
+    ],
+    "email": [
+        "{{email}}",
+        " "
+    ],
+    "phone": [
+        "{{phone}}",
+        " "
+    ],
+    "company": [
+        "{{company_name}}",
+        " "
+    ],
+    "title": [
+        "{{which_describes_you_the_best}}",
+        " "
+    ],
+    "city": [
+        "{{city}}",
+        " "
+    ],
+    "source": [
+        "Meta",
+        " "
+    ],
+    "stage_id": [
+        "new",
+        " "
+    ],
+    "custom_Clients Need": [
+        "{{what_is_your_main_objective?}}",
+        " "
+    ],
+    "custom_Industry": [
+        "{{choose_the_industry_that_describes_you_the_best}}",
+        " "
+    ]
+}

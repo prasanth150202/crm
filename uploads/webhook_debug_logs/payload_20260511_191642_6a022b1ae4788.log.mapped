@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Mugil Tamarind",
+        "email": "mugiltamarind26@gmail.com",
+        "phone": "p:+919442177026",
+        "company": "Mugil Tamarind",
+        "city": "Dharmapuri",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "below_\u20b91,00,000"
+    }
+}

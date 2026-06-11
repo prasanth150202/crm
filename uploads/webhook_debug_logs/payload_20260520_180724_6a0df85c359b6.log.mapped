@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Saranya sivanathan",
+        "email": "spsaranyasivanathan@gmail.com",
+        "phone": "p:+916374055932",
+        "company": "Bling tech connect",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "saas_applications"
+    }
+}

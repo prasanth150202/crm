@@ -1,0 +1,17 @@
+{
+    "standard": {
+        "name": "Varun",
+        "email": "mahendrathakor1234567898@gmail.com",
+        "phone": "p:+918140319623",
+        "city": "B",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "ad_name": "Market",
+        "form_name": "Techara_Leads",
+        "Lead Requirement": "Crypto",
+        "Lead Segment": "B2C",
+        "platform": "ig"
+    }
+}

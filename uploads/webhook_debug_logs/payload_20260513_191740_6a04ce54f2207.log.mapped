@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Julfa",
+        "email": "spamjulfa@gmail.com",
+        "phone": "p:+918072737363",
+        "company": "Velvet Crust Ventures",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "below_\u20b91,00,000"
+    }
+}

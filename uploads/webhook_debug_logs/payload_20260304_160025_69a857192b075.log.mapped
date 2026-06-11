@@ -1,0 +1,12 @@
+{
+    "standard": {
+        "name": "sahana",
+        "email": "sahanam8056@gmail.com",
+        "phone": "9842702320",
+        "city": "Erode",
+        "source": "Kongu College"
+    },
+    "custom": {
+        "Qualification": "College"
+    }
+}

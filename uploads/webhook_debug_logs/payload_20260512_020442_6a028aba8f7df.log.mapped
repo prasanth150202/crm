@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "San Jay",
+        "email": "sanjaysudhar329@gmail.com",
+        "phone": "p:+919514251329",
+        "company": "Le Prestige Residency",
+        "city": "Tindivanam",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Budget": "below_\u20b91,00,000"
+    }
+}

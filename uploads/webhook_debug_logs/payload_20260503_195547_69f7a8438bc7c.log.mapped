@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Gurmeet Gardgil",
+        "email": "gurmeet@mufasaman.com",
+        "phone": "9990866333",
+        "company": "Mufasaman",
+        "city": "New Delhi",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Luxury perfume brand"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "R Sathya",
+        "email": "Sathya190310@gmail.com",
+        "phone": "p:+917904310704",
+        "company": "Page3 luxury salon",
+        "title": "manufacturer",
+        "city": "Madurai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "both"
+    }
+}

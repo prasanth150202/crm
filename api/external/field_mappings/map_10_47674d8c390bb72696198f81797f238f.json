@@ -1,0 +1,34 @@
+{
+    "name": [
+        "{{full_name}}",
+        " "
+    ],
+    "email": [
+        "{{email}}",
+        " "
+    ],
+    "phone": [
+        "{{phone}}",
+        " "
+    ],
+    "company": [
+        "{{company}}",
+        " "
+    ],
+    "website": [
+        "{{website}}",
+        " "
+    ],
+    "source": [
+        "Website",
+        " "
+    ],
+    "stage_id": [
+        "new",
+        " "
+    ],
+    "custom_Clients Need": [
+        "{{message}}",
+        " "
+    ]
+}

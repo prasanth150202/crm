@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Gowtham",
+        "email": "bjfoods.gv@gmail.com",
+        "phone": "919791037997",
+        "company": "BJ Foods",
+        "city": "Chennai",
+        "source": "Whatsapp",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "We do have millets, traditional rice and millet based rte tec products. In our brand"
+    }
+}

@@ -1,0 +1,8 @@
+{"timestamp":"2026-02-06 08:37:42","level":"INFO","message":"User logged in","context":{"user_id":52,"email":"prasanthsk1502@gmail.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-06 13:34:09","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":62,"ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-06 13:34:09","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/crm-final\/api\/auth\/login.php"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-06 13:34:09","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":62,"ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-06 13:34:09","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/crm-final\/api\/auth\/login.php"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-06 13:34:18","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":62,"ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-06 13:34:18","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/crm-final\/api\/auth\/login.php"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-06 13:35:05","level":"INFO","message":"User logged in","context":{"user_id":63,"email":"prasanth1234@gmail.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}

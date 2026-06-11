@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Arun A",
+        "email": "arun.eng27@gmail.com",
+        "phone": "9626699001",
+        "company": "Nutryah Digital health private limited",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Developed Hospital Management and Inventory Management systems using Python, FastAPI, React.js, and MySQL. Worked on UI development, backend API integration, database handling, and payment gateway integration."
+    }
+}

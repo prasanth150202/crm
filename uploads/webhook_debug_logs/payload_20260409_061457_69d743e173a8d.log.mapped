@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Jack",
+        "email": "jackjohn321@gmail.com",
+        "phone": "6025058893",
+        "company": "Newtech private limited",
+        "website": "Https:newtechtehnology.com",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am interested in: SEO\/AEO\/GEO."
+    }
+}

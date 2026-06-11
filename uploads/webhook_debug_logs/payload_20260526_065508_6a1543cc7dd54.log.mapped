@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Santhosh kumar",
+        "email": "trainer@sgacars.in",
+        "phone": "8680033099",
+        "company": "SGA cars india pvt ltd",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Enquiry Related Details."
+    }
+}

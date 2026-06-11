@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Lakshita_boutique_2025",
+        "email": "Geetha2125@gmail.com",
+        "phone": "p:+918939144157",
+        "company": "Lakshita boutique",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "offline_stores"
+    }
+}

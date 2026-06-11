@@ -1,0 +1,5 @@
+{"timestamp":"2026-05-09 05:11:51","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":17,"ip":"103.130.204.184"},"ip":"103.130.204.184","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-05-09 05:11:51","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/api\/auth\/login.php"},"ip":"103.130.204.184","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-05-09 05:11:58","level":"INFO","message":"User logged in","context":{"user_id":17,"email":"aymanthahir.a@digifyce.com","ip":"103.130.204.184"},"ip":"103.130.204.184","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-05-09 05:38:10","level":"WARNING","message":"Failed login attempt","context":{"email":"admin@digifyce.in","ip":"103.130.204.184"},"ip":"103.130.204.184","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-05-09 05:38:10","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/api\/auth\/login.php"},"ip":"103.130.204.184","uri":"\/api\/auth\/login.php","method":"POST"}

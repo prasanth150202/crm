@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "test",
+        "email": "test@gmail.com",
+        "phone": "98765 43210",
+        "company": "test",
+        "website": "https:\/\/digifyce.com\/",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "test"
+    }
+}

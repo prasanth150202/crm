@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Ashik",
+        "email": "ashikashikmi@gmail.com",
+        "phone": "6380791783",
+        "company": "Habibi Agency",
+        "city": "Chennai",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Lottery business"
+    }
+}

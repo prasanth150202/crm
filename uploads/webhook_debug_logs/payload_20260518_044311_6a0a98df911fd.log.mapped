@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Ahmed",
+        "email": "ahmed4464066@gmail.com",
+        "phone": "p:+919176466960",
+        "company": "Alif",
+        "title": "manufacturer",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "both"
+    }
+}

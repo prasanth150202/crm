@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Murish",
+        "email": "muralikrishnanmdentist@gmail.com",
+        "phone": "p:+919003088392",
+        "company": "mefzstyle",
+        "title": "manufacturer",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "sales(website)"
+    }
+}

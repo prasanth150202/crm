@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Appu M",
+        "email": "appugandhi555@gmail.com",
+        "phone": "+919597900174",
+        "company": "Infotroz solutions",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am interested in: ECom Development, Web Development."
+    }
+}

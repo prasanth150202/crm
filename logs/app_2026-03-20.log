@@ -1,0 +1,2 @@
+{"timestamp":"2026-03-20 04:42:42","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"2401:4900:88e4:19cd:2990:6d65:7296:fd76"},"ip":"2401:4900:88e4:19cd:2990:6d65:7296:fd76","uri":"\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-03-20 11:24:25","level":"INFO","message":"User logged in","context":{"user_id":14,"email":"info@techara.in","ip":"2401:4900:88e4:19cd:8c2d:c5e3:f7e9:2f87"},"ip":"2401:4900:88e4:19cd:8c2d:c5e3:f7e9:2f87","uri":"\/api\/auth\/login.php","method":"POST"}

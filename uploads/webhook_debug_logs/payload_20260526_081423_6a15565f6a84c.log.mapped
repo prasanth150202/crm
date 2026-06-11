@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Mani Vars",
+        "email": "sales@primalindustrialsolution.in",
+        "phone": "p:+919629166702",
+        "company": "Primal industrial solution",
+        "title": "manufacturer",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "both"
+    }
+}

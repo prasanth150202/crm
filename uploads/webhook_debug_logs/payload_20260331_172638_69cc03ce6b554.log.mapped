@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Mustack k",
+        "email": "mustack2002@gmail.com",
+        "phone": "9042489929",
+        "company": "It",
+        "website": "Google",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "Web developer"
+    }
+}

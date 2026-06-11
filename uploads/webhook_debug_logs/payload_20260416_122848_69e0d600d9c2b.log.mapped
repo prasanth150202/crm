@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Roopali",
+        "email": "roopali156@gmail.com",
+        "phone": "1126854105",
+        "company": "Nutri heart",
+        "city": "Selangore",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "Home based cooking with Indian vegetarian foods"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Arun Prasad",
+        "email": "arunprasadphotography@gmail.com",
+        "phone": "p:+919944878088",
+        "company": "Arun Prasad Photography",
+        "city": "Coimbatore",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}

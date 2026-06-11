@@ -1,0 +1,12 @@
+{
+    "standard": {
+        "name": "Monika",
+        "email": "guestmail005@nomail.com",
+        "phone": "8807843704",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "."
+    }
+}

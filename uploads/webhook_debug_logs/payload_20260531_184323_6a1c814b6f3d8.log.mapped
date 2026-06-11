@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Neeta",
+        "email": "neetamalhotra14@gmail.com",
+        "phone": "p:+919940722022",
+        "company": "Cuddleyourbundleofjoy",
+        "title": "manufacturer",
+        "city": "Erode",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "sales(website)"
+    }
+}

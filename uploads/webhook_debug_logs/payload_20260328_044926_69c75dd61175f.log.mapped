@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Pagada maulik",
+        "email": "pagadamaulik4@gmail.com",
+        "phone": "+917567012208",
+        "company": "INAI Worlds private limited",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am interested in: Web Development, AI Automation."
+    }
+}

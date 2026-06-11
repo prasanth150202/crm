@@ -1,0 +1,9 @@
+{
+    "event": "lead.created",
+    "data": {
+        "name": "Prasantdn",
+        "email": "prasabdhth@test.com",
+        "phone": "9876543210",
+        "source": "Naukri"
+    }
+}

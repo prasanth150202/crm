@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Rajmohan",
+        "email": "Rajmohankamarajan2@gmail.com",
+        "phone": "p:+918807282286",
+        "company": "Lingam hardwares",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "offline_stores"
+    }
+}

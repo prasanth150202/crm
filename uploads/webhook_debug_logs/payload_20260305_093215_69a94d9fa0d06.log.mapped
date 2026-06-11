@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Manavalan",
+        "email": "manavalan032@gmail.com",
+        "phone": "9384754527",
+        "company": "Digifyce",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am pytgon fullstack developer"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Melt Artisan chocolates",
+        "email": "kthiru2411@gmail.com",
+        "phone": "p:9787977790",
+        "company": "Melt farm foods",
+        "title": "manufacturer",
+        "city": "Hosur",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "both"
+    }
+}

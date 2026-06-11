@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Prasanth",
+        "email": "prasanth63740@gmail.com",
+        "phone": "+917339634807",
+        "company": "Ragavendra K",
+        "website": "digifyce.com",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am interested in: ECom Development, Lead Generation."
+    }
+}

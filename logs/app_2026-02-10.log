@@ -1,0 +1,7 @@
+{"timestamp":"2026-02-10 08:40:46","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":10,"ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-10 08:40:46","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/crm-final\/api\/auth\/login.php"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-10 08:40:57","level":"INFO","message":"User logged in","context":{"user_id":10,"email":"prashanth@digifyce.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-10 10:47:02","level":"INFO","message":"User logged in","context":{"user_id":76,"email":"pandatest@gmail.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-10 10:49:55","level":"INFO","message":"User logged in","context":{"user_id":77,"email":"pandatestq@gmail.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-10 13:11:19","level":"INFO","message":"User logged in","context":{"user_id":78,"email":"prasanth63740@gmail.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-02-10 13:43:09","level":"INFO","message":"User logged in","context":{"user_id":78,"email":"prasanth63740@gmail.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}

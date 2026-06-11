@@ -1,0 +1,13 @@
+{
+    "standard": {
+        "name": "Deepak C",
+        "email": "deepakanbarasi15@gmail.com",
+        "phone": "9789750149",
+        "company": "Fresher",
+        "source": "Website",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "I am interested in: Web Development.\r\nI had developed some projects in my college days like portfolio, Food Recipe and then I want to say I feel very happy and comfortable while doing these web development job."
+    }
+}

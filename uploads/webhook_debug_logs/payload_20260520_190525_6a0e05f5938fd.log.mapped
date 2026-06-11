@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Kamesh | AI & ML Engineer",
+        "email": "kameshtech1221@gmail.con",
+        "phone": "p:+919003722746",
+        "company": "Upmeta Academy",
+        "city": "Chennai",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}

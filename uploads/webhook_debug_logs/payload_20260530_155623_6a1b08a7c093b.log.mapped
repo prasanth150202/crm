@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Raji Daniel",
+        "email": "rajidaniel23@gmail.com",
+        "phone": "p:+919894088210",
+        "company": "RD studio",
+        "city": "Tiruvallur",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}

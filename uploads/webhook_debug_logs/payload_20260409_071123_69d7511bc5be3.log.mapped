@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Hari Hariharan",
+        "email": "addishari2002@gmail.com",
+        "phone": "p:+919360459471",
+        "city": "Coimbatore",
+        "source": "Digital",
+        "stage_id": "new"
+    },
+    "custom": {
+        "form_name": "Techara_Students",
+        "Lead Segment": "B2C"
+    }
+}

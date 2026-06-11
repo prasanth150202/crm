@@ -1,0 +1,14 @@
+{
+    "standard": {
+        "name": "Ranjani",
+        "email": "ranjaniranjani023@gmail.com",
+        "phone": "Call on instagram",
+        "company": "Crazypetspoint",
+        "city": "Bangalore",
+        "source": "Instagram",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Bussiness Type": "We sell pets through google"
+    }
+}

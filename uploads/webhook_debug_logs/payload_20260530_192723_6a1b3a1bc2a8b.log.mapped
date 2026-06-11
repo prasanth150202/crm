@@ -1,0 +1,15 @@
+{
+    "standard": {
+        "name": "Faizal All events",
+        "email": "faizal822292@gmail.com",
+        "phone": "p:+919080250732",
+        "company": "MF PAINTING CONTRACTOR",
+        "city": "Anna Nagar",
+        "source": "Meta",
+        "stage_id": "new"
+    },
+    "custom": {
+        "Clients Need": "leads",
+        "Industry": "service_industry"
+    }
+}
