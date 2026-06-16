@@ -813,10 +813,11 @@ Object.assign(App, {
                 return;
             }
 
+            const csrfToken = window.AppData && window.AppData.csrf_token ? window.AppData.csrf_token : '';
             const response = await fetch(`${this.apiUrl}/admin/generate_api_key.php`, {
                 method: 'POST',
                 credentials: 'include',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', 'X-CSRF-Token': csrfToken },
                 body: JSON.stringify({ org_id })
             });
             const result = await response.json();
@@ -843,7 +844,8 @@ Object.assign(App, {
 
             const resp = await fetch(`${this.apiUrl}/admin/get_api_key.php?org_id=${org_id}`, {
                 method: 'GET',
-                credentials: 'include'
+                credentials: 'include',
+                headers: { 'X-CSRF-Token': window.AppData && window.AppData.csrf_token ? window.AppData.csrf_token : '' }
             });
             const result = await resp.json();
             const keyInput = document.getElementById('apiKeyValue');
