@@ -38,8 +38,19 @@ function handleGetWebhooks($pdo, $org_id) {
 }
 
 function handleCreateWebhook($pdo, $org_id) {
+    require_once __DIR__ . '/../../includes/PlanFeatureChecker.php';
+    require_once __DIR__ . '/../../includes/SubscriptionMiddleware.php';
+    $planFeatureChecker = new PlanFeatureChecker($pdo, $org_id);
+    $subMiddleware = getSubscriptionMiddleware($pdo, $planFeatureChecker, $org_id);
+    $webhookCheck = $subMiddleware->canUseWebhooks();
+    if (!$webhookCheck['allowed']) {
+        http_response_code(403);
+        echo json_encode(['error' => $webhookCheck['message'], 'upgrade_required' => true]);
+        return;
+    }
+
     $input = json_decode(file_get_contents('php://input'), true);
-    
+
     if (!isset($input['url']) || !isset($input['events'])) {
         http_response_code(400);
         echo json_encode(["error" => "URL and events are required"]);

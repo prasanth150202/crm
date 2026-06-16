@@ -1,11 +1,7 @@
 <?php
 // api/leads/import.php
 header("Content-Type: application/json");
-require_once '../../config/db.php';
-
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
+require_once '../../includes/api_common.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -38,6 +34,13 @@ if (!empty($missingParams)) {
 if (!in_array($import_mode, ['skip', 'update', 'overwrite'])) {
     http_response_code(400);
     echo json_encode(["error" => "Invalid import mode"]);
+    exit;
+}
+
+$importCheck = $subscriptionMiddleware->canUseFeature('bulk_import', 'Bulk Import');
+if (!$importCheck['allowed']) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => $importCheck['message'], 'upgrade_required' => true]);
     exit;
 }
 

@@ -25,7 +25,7 @@ try {
     $permissionManager = getPermissionManager($pdo, $user);
     
     // Check permission - only users with manage_users can create invitations
-    if (!$permissionManager->hasFeature('manage_users')) {
+    if (!$permissionManager->hasPermission('manage_users') && !in_array($user['role'] ?? '', ['admin', 'owner'])) {
         ApiResponse::error('Permission denied. Only administrators can create invitations.', 403);
     }
     

@@ -1,11 +1,7 @@
 <?php
 // api/leads/import_preview.php
 header("Content-Type: application/json");
-require_once '../../config/db.php';
-
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Allow-Headers: Content-Type");
+require_once '../../includes/api_common.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
@@ -26,6 +22,13 @@ $org_id = isset($_POST['org_id']) ? (int)$_POST['org_id'] : 0;
 if (!$org_id) {
     http_response_code(400);
     echo json_encode(["error" => "Missing org_id"]);
+    exit;
+}
+
+$importCheck = $subscriptionMiddleware->canUseFeature('bulk_import', 'Bulk Import');
+if (!$importCheck['allowed']) {
+    http_response_code(403);
+    echo json_encode(['success' => false, 'error' => $importCheck['message'], 'upgrade_required' => true]);
     exit;
 }
 

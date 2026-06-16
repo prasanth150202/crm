@@ -7,6 +7,8 @@
 require_once __DIR__ . '/../../config/db.php';
 require_once __DIR__ . '/../../config/permissions.php';
 require_once __DIR__ . '/../../includes/auth_check.php';
+require_once __DIR__ . '/../../includes/PlanFeatureChecker.php';
+require_once __DIR__ . '/../../includes/SubscriptionMiddleware.php';
 
 header('Content-Type: application/json');
 
@@ -129,6 +131,25 @@ try {
     
     // Update actions if provided
     if (isset($data['actions'])) {
+        $hasWebhookAction = false;
+        foreach ($data['actions'] as $action) {
+            if (isset($action['action_type']) && $action['action_type'] === 'webhook') {
+                $hasWebhookAction = true;
+                break;
+            }
+        }
+        if ($hasWebhookAction) {
+            $planFeatureChecker = getPlanFeatureChecker($pdo, $user);
+            $subMiddleware = getSubscriptionMiddleware($pdo, $planFeatureChecker, $user['org_id']);
+            $webhookCheck = $subMiddleware->canUseWebhooks();
+            if (!$webhookCheck['allowed']) {
+                $pdo->rollBack();
+                http_response_code(403);
+                echo json_encode(['error' => $webhookCheck['message'], 'upgrade_required' => true]);
+                exit;
+            }
+        }
+
         // Delete existing actions
         $pdo->prepare("DELETE FROM automation_actions WHERE workflow_id = ?")->execute([$workflow_id]);
         
