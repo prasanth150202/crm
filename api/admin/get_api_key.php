@@ -2,16 +2,19 @@
 // api/admin/get_api_key.php
 ini_set('display_errors', 0);
 error_reporting(0);
-header("Content-Type: application/json");
-header("Access-Control-Allow-Origin: null");
-header("Access-Control-Allow-Methods: GET");
-header("Access-Control-Allow-Headers: Content-Type");
-header("Access-Control-Allow-Credentials: true");
 require_once '../../config/db.php';
+require_once '../../config/middleware.php';
 
-session_start();
+Middleware::apply([
+    'cors_origins' => getenv('CORS_ALLOWED_ORIGINS'),
+    'session' => true,
+    'rate_limit' => false,
+]);
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+header("Content-Type: application/json");
+
+$isAdmin = isset($_SESSION['user_id']) && ($_SESSION['role'] === 'admin' || !empty($_SESSION['is_super_admin']));
+if (!$isAdmin) {
     http_response_code(403);
     echo json_encode(["error" => "Admin access required. Please login first."]);
     exit;
