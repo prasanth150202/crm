@@ -35,14 +35,11 @@ try {
     $features = array_keys($planFeatureChecker->getAllFeatures());
 
     ApiResponse::success([
-        'success' => true,
-        'data' => [
-            'plan' => $planDetails,
-            'user_count' => $userCount,
-            'user_limit' => $userLimit,
-            'features' => $features,
-            'subscription_status' => $planFeatureChecker->getSubscriptionStatus()
-        ]
+        'plan' => $planDetails,
+        'user_count' => $userCount,
+        'user_limit' => $userLimit,
+        'features' => $features,
+        'subscription_status' => $planFeatureChecker->getSubscriptionStatus()
     ]);
 
 } catch (Exception $e) {

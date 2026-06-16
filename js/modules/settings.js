@@ -1022,6 +1022,15 @@ Object.assign(App, {
         if (!container) return;
 
         const { plan, user_count, user_limit, features } = data;
+
+        if (!plan) {
+            container.innerHTML = `
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                    <p class="text-sm text-yellow-800">No plan assigned to this organization yet.</p>
+                </div>
+            `;
+            return;
+        }
         const progress = user_limit ? (user_count / user_limit) * 100 : 0;
         const progressBarColor = progress > 90 ? 'bg-red-500' : progress > 75 ? 'bg-yellow-500' : 'bg-blue-600';
 
