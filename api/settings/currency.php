@@ -7,7 +7,7 @@ require_once '../../config/db.php';
 require_once '../../config/middleware.php';
 require_once '../../config/response.php';
 
-Middleware::apply(['session' => true]);
+Middleware::apply(['session' => true, 'cors_origins' => getenv('CORS_ALLOWED_ORIGINS')]);
 $user = Middleware::requireAuth();
 
 $org_id = $user['org_id'];

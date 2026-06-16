@@ -47,9 +47,11 @@ class Middleware {
         }
 
         if (!$isExempt && in_array($method, ['POST', 'PUT', 'DELETE', 'PATCH'])) {
-            $headers = getallheaders();
-            $token = $headers['X-CSRF-Token'] ?? ($_POST['csrf_token'] ?? null);
-            
+            $headers = array_change_key_case(getallheaders() ?: [], CASE_LOWER);
+            $token = $headers['x-csrf-token']
+                ?? $_SERVER['HTTP_X_CSRF_TOKEN']
+                ?? ($_POST['csrf_token'] ?? null);
+
             if (!$token || !Security::verifyCsrfToken($token)) {
                 ApiResponse::error('Invalid CSRF Token', 403);
             }
