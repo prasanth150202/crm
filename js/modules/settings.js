@@ -1036,22 +1036,29 @@ Object.assign(App, {
         const progress = user_limit ? (user_count / user_limit) * 100 : 0;
         const progressBarColor = progress > 90 ? 'bg-red-500' : progress > 75 ? 'bg-yellow-500' : 'bg-blue-600';
 
-        // Human-friendly feature names
+        // Only show high-level plan features, not granular role-permission knobs
         const featureNames = {
-            'basic_user_management': 'Basic User Management',
+            'basic_user_management': 'User Management',
             'manage_users': 'Advanced User Management',
             'basic_leads': 'Lead Management',
             'bulk_export': 'Bulk Export',
             'bulk_import': 'Bulk Import',
             'basic_automations': 'Basic Automations',
             'advanced_automations': 'Advanced Automations',
-            'webhooks': 'Webhooks Integration',
+            'webhooks': 'Webhooks',
             'api_access': 'API Access',
             'custom_fields': 'Custom Fields',
             'activity_logs': 'Activity Logs',
             'basic_reports': 'Standard Reports',
-            'advanced_reports': 'Advanced Analytics'
+            'advanced_reports': 'Advanced Analytics',
+            'external_webhooks': 'External Webhooks',
+            'integrations': 'Integrations',
+            'premium_integrations': 'Premium Integrations',
+            'unlimited_users': 'Unlimited Users',
+            'dedicated_support': 'Dedicated Support',
+            'enhanced_security': 'Enhanced Security'
         };
+        const displayFeatures = features.filter(f => featureNames[f]);
 
         container.innerHTML = `
             <div class="space-y-6">
@@ -1086,10 +1093,10 @@ Object.assign(App, {
                 <div>
                     <h5 class="text-sm font-semibold text-gray-700 mb-3">Included Features</h5>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-                        ${features.map(f => `
+                        ${displayFeatures.map(f => `
                             <div class="flex items-center p-3 rounded-lg border border-gray-200 bg-white shadow-sm hover:border-blue-200 transition-colors">
                                 <i data-lucide="check-circle-2" class="h-4 w-4 text-green-500 mr-2 flex-shrink-0"></i>
-                                <span class="text-sm text-gray-700 font-medium">${featureNames[f] || f.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</span>
+                                <span class="text-sm text-gray-700 font-medium">${featureNames[f]}</span>
                             </div>
                         `).join('')}
                     </div>
@@ -1107,11 +1114,6 @@ Object.assign(App, {
                     </div>
                 </div>
 
-                <div class="pt-4 flex justify-end">
-                    <button onclick="App.router('plans')" class="inline-flex items-center px-4 py-2 border border-blue-600 text-sm font-medium rounded-md text-blue-600 bg-white hover:bg-blue-50 transition-colors">
-                        <i data-lucide="arrow-up-circle" class="h-4 w-4 mr-2"></i>Upgrade Plan
-                    </button>
-                </div>
             </div>
         `;
 
