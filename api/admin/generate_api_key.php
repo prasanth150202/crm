@@ -11,7 +11,8 @@ require_once '../../config/db.php';
 
 session_start();
 
-if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+$isAdmin = isset($_SESSION['user_id']) && ($_SESSION['role'] === 'admin' || !empty($_SESSION['is_super_admin']));
+if (!$isAdmin) {
     http_response_code(403);
     echo json_encode(["error" => "Admin access required. Please login first."]);
     exit;
