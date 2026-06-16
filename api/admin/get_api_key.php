@@ -3,13 +3,10 @@
 ini_set('display_errors', 0);
 error_reporting(0);
 require_once '../../config/db.php';
-require_once '../../config/middleware.php';
+require_once '../../config/security.php';
 
-Middleware::apply([
-    'cors_origins' => getenv('CORS_ALLOWED_ORIGINS'),
-    'session' => true,
-    'rate_limit' => false,
-]);
+Security::cors(getenv('CORS_ALLOWED_ORIGINS'));
+Security::secureSession();
 
 header("Content-Type: application/json");
 
