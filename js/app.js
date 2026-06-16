@@ -56,6 +56,7 @@ async function fetchAndSetUserPermissions() {
     await import(`./modules/audit.js?v=${v}`);
     await import(`./modules/subscription.js?v=${v}`);
     await import(`./modules/partners.js?v=${v}`);
+    await import(`./modules/admin.js?v=${v}`);
 
     // ✅ SIGNAL THAT APP IS FULLY READY
     window.AppReady = true;

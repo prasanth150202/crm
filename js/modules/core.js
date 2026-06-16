@@ -837,6 +837,16 @@ Object.assign(App, {
                                 '<div class="p-6 text-center text-gray-500">Automations module not available</div>';
                         });
                     break;
+                case "admin":
+                    document.getElementById("pageTitle").textContent =
+                        "Admin";
+                    if (window.Admin && typeof window.Admin.init === "function") {
+                        window.Admin.init();
+                    } else {
+                        appContent.innerHTML =
+                            '<div class="p-6 text-center text-gray-500">Admin module not available</div>';
+                    }
+                    break;
                 default:
                     document.getElementById("pageTitle").textContent =
                         "Dashboard";

@@ -126,6 +126,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         <i data-lucide="zap" class="mr-3 h-4 w-4 text-blue-300 group-hover:text-white flex-shrink-0"></i>
                         <span class="nav-label">Automations</span>
                     </a>
+
+                    <?php if (!empty($_SESSION['is_super_admin'])): ?>
+                    <a href="<?php echo $projectRoot; ?>/admin" onclick="event.preventDefault(); App.router('admin')"
+                        class="text-blue-100 hover:text-white group flex items-center px-3 py-2.5 text-sm font-medium rounded-lg transition-all"
+                        title="Admin">
+                        <i data-lucide="shield" class="mr-3 h-4 w-4 text-blue-300 group-hover:text-white flex-shrink-0"></i>
+                        <span class="nav-label">Admin</span>
+                    </a>
+                    <?php endif; ?>
                 </nav>
 
                 <!-- Organization Selector (Super Admin) -->

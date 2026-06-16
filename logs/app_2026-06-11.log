@@ -1,1 +1,2 @@
 {"timestamp":"2026-06-11 14:02:56","level":"INFO","message":"User logged in","context":{"user_id":10,"email":"prashanth@digifyce.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-06-11 15:53:30","level":"INFO","message":"User logged in","context":{"user_id":10,"email":"prashanth@digifyce.com","ip":"::1"},"ip":"::1","uri":"\/crm-final\/api\/auth\/login.php","method":"POST"}
