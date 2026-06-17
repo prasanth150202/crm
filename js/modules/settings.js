@@ -971,8 +971,17 @@ Object.assign(App, {
         try {
             const result = await this.api('/settings/currency.php', 'POST', { currency });
             if (result && result.success) {
+                // Update both AppData and localStorage so getCurrency() reads the new value
                 if (window.AppData && window.AppData.user) {
                     window.AppData.user.currency = currency;
+                }
+                const stored = localStorage.getItem('crm_user');
+                if (stored) {
+                    try {
+                        const u = JSON.parse(stored);
+                        u.currency = currency;
+                        localStorage.setItem('crm_user', JSON.stringify(u));
+                    } catch(e) {}
                 }
                 this.showToast(`Currency updated to ${currency} — reloading…`, 'success');
                 setTimeout(() => window.location.reload(), 1000);
