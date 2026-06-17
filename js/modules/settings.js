@@ -971,11 +971,19 @@ Object.assign(App, {
         try {
             const result = await this.api('/settings/currency.php', 'POST', { currency });
             if (result && result.success) {
-                // Update AppData so the label refreshes without a page reload
+                // Update AppData so formatCurrency() picks up the new value immediately
                 if (window.AppData && window.AppData.user) {
                     window.AppData.user.currency = currency;
                 }
                 this.showToast(`Currency set to ${currency}`, 'success');
+                // Re-render any already-displayed monetary values
+                if (typeof App.loadLeads === 'function' && document.getElementById('leadsTableContainer')) {
+                    App.loadLeads(0);
+                } else if (typeof App.loadKanban === 'function' && document.getElementById('kanbanBoard')) {
+                    App.loadKanban();
+                } else if (typeof App.loadDashboard === 'function' && document.getElementById('dashboardContent')) {
+                    App.loadDashboard();
+                }
             } else {
                 alert('Error: ' + (result && result.error ? result.error : 'Failed to save currency'));
             }
