@@ -854,7 +854,7 @@ Object.assign(App, {
                 // Strip HTML tags for the plain-text preview; store raw HTML in data-full
                 const textContent = fullDesc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
                 const preview = textContent.length > 80 ? textContent.substring(0, 80) + '…' : (textContent || '-');
-                const safeAttr = fullDesc.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/\n/g,'&#10;');
+                const safeAttr = fullDesc.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/\n/g,'&#10;');
                 const safeDisp = preview.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
                 return `<td class="px-3 py-4 text-sm text-gray-500 desc-col-cell" style="max-width:220px;min-width:120px"
                     data-full="${safeAttr}" data-lead-id="${lead.id}"
@@ -1685,7 +1685,12 @@ Object.assign(App, {
         input.focus();
 
         const save = async () => {
-            const newValue = (input.contentEditable === 'true') ? input.innerHTML : input.value;
+            let newValue = (input.contentEditable === 'true') ? input.innerHTML : input.value;
+            // Strip browser-injected empty markup from contenteditable
+            if (input.contentEditable === 'true') {
+                const stripped = newValue.replace(/<br\s*\/?>/gi, '').replace(/<div>\s*<\/div>/gi, '').trim();
+                if (!stripped) newValue = '';
+            }
             const standardFields = ['name', 'title', 'company', 'lead_value', 'email', 'phone', 'source', 'stage_id', 'assigned_to', 'address', 'city', 'state', 'country', 'zip_code', 'website', 'description'];
 
             if (standardFields.includes(field)) {

@@ -19,10 +19,12 @@ $taxColSelect = $colCheck->rowCount() > 0 ? ', p.tax_treatment' : ", 'none' AS t
 
 $sql = "SELECT s.*, o.name AS org_name,
                p.name AS plan_name, p.base_price_monthly, p.base_price_yearly
-               $taxColSelect, p.currency AS plan_currency
+               $taxColSelect, p.currency AS plan_currency,
+               u.full_name AS owner_name, u.email AS owner_email
         FROM subscriptions s
         JOIN organizations o ON o.id = s.organization_id
         JOIN plans p ON p.id = s.plan_id
+        LEFT JOIN users u ON u.org_id = s.organization_id AND u.role = 'owner' AND u.is_active = 1
         $where
         ORDER BY s.created_at DESC
         LIMIT $limit OFFSET $offset";

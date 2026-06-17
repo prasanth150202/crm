@@ -671,7 +671,9 @@ const Admin = {
                     </div>
                     <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px 14px;">
                         <p style="font-size:0.65rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 7px;">Billed To</p>
-                        <p style="font-weight:700;color:#111827;font-size:0.88rem;margin:0 0 2px;">${App.escapeHtml(s.org_name || '')}</p>
+                        ${s.owner_name ? `<p style="font-weight:700;color:#111827;font-size:0.88rem;margin:0 0 2px;">${App.escapeHtml(s.owner_name)}</p>` : ''}
+                        <p style="color:#374151;font-size:0.82rem;margin:0 0 2px;">${App.escapeHtml(s.org_name || '')}</p>
+                        ${s.owner_email ? `<p style="color:#374151;font-size:0.78rem;margin:0 0 2px;">${App.escapeHtml(s.owner_email)}</p>` : ''}
                         ${periodText ? `<p style="font-size:0.78rem;color:#374151;margin:0;"><strong>Period:</strong> ${periodText}</p>` : ''}
                     </div>
                 </div>

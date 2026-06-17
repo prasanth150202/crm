@@ -595,6 +595,7 @@ Object.assign(App, {
         const options = {
             method,
             headers,
+            credentials: 'include',
         };
 
         if (body) {
