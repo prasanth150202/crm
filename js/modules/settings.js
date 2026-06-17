@@ -971,11 +971,11 @@ Object.assign(App, {
         try {
             const result = await this.api('/settings/currency.php', 'POST', { currency });
             if (result && result.success) {
-                // Update AppData so formatCurrency() picks up the new value immediately
                 if (window.AppData && window.AppData.user) {
                     window.AppData.user.currency = currency;
                 }
-                this.showToast(`Currency set to ${currency}`, 'success');
+                this.showToast(`Currency updated to ${currency} — reloading…`, 'success');
+                setTimeout(() => window.location.reload(), 1000);
             } else {
                 alert('Error: ' + (result && result.error ? result.error : 'Failed to save currency'));
             }
