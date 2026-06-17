@@ -113,7 +113,7 @@ Object.assign(App, {
                         <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Pipeline Value</p>
                         <div class="flex items-end space-x-2 mt-2">
                             <p class="text-4xl font-extrabold text-gray-900">${formattedTotalValue}</p>
-                            <span class="text-emerald-600 text-sm font-medium mb-1">USD</span>
+                            <span class="text-emerald-600 text-sm font-medium mb-1">${App.getCurrency()}</span>
                         </div>
                     </div>
                     <div class="relative overflow-hidden bg-white p-6 rounded-2xl shadow-sm border border-gray-200 group hover:shadow-md transition-shadow">
@@ -938,8 +938,8 @@ Object.assign(App, {
         if (config.type === 'pipeline_funnel' || config.type === 'channel_table') {
             const stageMap = {};
             (summaryData.by_stage || []).forEach(s => { stageMap[s.stage_id] = s; });
-            const currency = window.AppData?.user?.currency || 'INR';
-            const currencySymbol = currency === 'INR' ? '₹' : '$';
+            const currency = window.AppData?.user?.currency || 'USD';
+            const currencySymbol = App.getCurrencySymbol(currency);
             const fmtNum = n => Number(n).toLocaleString();
             const fmtMoney = n => currencySymbol + Number(n).toLocaleString();
 

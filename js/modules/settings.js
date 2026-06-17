@@ -976,14 +976,6 @@ Object.assign(App, {
                     window.AppData.user.currency = currency;
                 }
                 this.showToast(`Currency set to ${currency}`, 'success');
-                // Re-render any already-displayed monetary values
-                if (typeof App.loadLeads === 'function' && document.getElementById('leadsTableContainer')) {
-                    App.loadLeads(0);
-                } else if (typeof App.loadKanban === 'function' && document.getElementById('kanbanBoard')) {
-                    App.loadKanban();
-                } else if (typeof App.loadDashboard === 'function' && document.getElementById('dashboardContent')) {
-                    App.loadDashboard();
-                }
             } else {
                 alert('Error: ' + (result && result.error ? result.error : 'Failed to save currency'));
             }

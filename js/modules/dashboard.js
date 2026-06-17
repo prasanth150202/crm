@@ -826,8 +826,8 @@ class Dashboard {
         (summary.by_stage || []).forEach(s => { stageMap[s.stage_id] = s; });
         const wonValue = Number(stageMap['won']?.total_value || 0);
         const fmtNum = n => Number(n).toLocaleString();
-        const currency = window.AppData?.user?.currency || 'INR';
-        const currencySymbol = currency === 'INR' ? '₹' : '$';
+        const currency = window.AppData?.user?.currency || 'USD';
+        const currencySymbol = App.getCurrencySymbol(currency);
         const fmtMoney = n => currencySymbol + Number(n).toLocaleString();
 
         const stageOrder = ['new','contacted','qualified','proposal','won'];
@@ -867,8 +867,8 @@ class Dashboard {
     renderChannelTable(innerEl, summary) {
         const sources = (summary.by_source || []).slice(0, 8);
         const total = sources.reduce((s,r) => s + Number(r.count), 0) || 1;
-        const currency = window.AppData?.user?.currency || 'INR';
-        const currencySymbol = currency === 'INR' ? '₹' : '$';
+        const currency = window.AppData?.user?.currency || 'USD';
+        const currencySymbol = App.getCurrencySymbol(currency);
         const fmtMoney = n => currencySymbol + Number(n).toLocaleString();
         const srcPalette = ['#2563EB','#7C3AED','#0891B2','#059669','#DC2626','#D97706','#DB2777','#0D9488'];
         const srcColor = (name) => srcPalette[name.charCodeAt(0) % srcPalette.length];
