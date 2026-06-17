@@ -524,16 +524,10 @@ Object.assign(App, {
 
     formatCurrency(amount) {
         const currency = this.getCurrency();
+        const symbol = this.getCurrencySymbol(currency);
         const num = Number(amount);
-        try {
-            return num.toLocaleString("en-US", {
-                style: "currency",
-                currency,
-                maximumFractionDigits: 2,
-            });
-        } catch (e) {
-            return this.getCurrencySymbol(currency) + num.toFixed(2);
-        }
+        const locale = currency === 'INR' ? 'en-IN' : 'en-US';
+        return symbol + num.toLocaleString(locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     },
 
     getUser() {
