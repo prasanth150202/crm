@@ -493,16 +493,11 @@ Object.assign(App, {
     },
 
     getCurrency() {
+        // Always prefer AppData.user.currency (fresh from DB via PHP page load)
+        if (window.AppData?.user?.currency) return window.AppData.user.currency;
+        // Fallback to localStorage (e.g. on pages without AppData injection)
         const user = this.getUser();
-        if (user && user.currency) return user.currency;
-        // Fallback: check AppData directly (set by dashboard.php)
-        if (
-            window.AppData &&
-            window.AppData.user &&
-            window.AppData.user.currency
-        ) {
-            return window.AppData.user.currency;
-        }
+        if (user?.currency) return user.currency;
         return "USD";
     },
 
