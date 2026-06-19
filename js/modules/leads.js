@@ -992,9 +992,12 @@ Object.assign(App, {
         };
         if (colorMap[key]) statusColor = colorMap[key];
 
-        // Format Description
-        const descriptionHtml = lead.description
-            ? `< div class= "mt-4 p-3 bg-gray-50 rounded text-sm text-gray-700 whitespace-pre-wrap" > ${lead.description}</div > `
+        // Format Description — strip contenteditable attrs so table cells are read-only in this view
+        const cleanDesc = lead.description
+            ? lead.description.replace(/\s*contenteditable="[^"]*"/gi, '')
+            : null;
+        const descriptionHtml = cleanDesc
+            ? `<div class="mt-4 p-3 bg-gray-50 rounded text-sm text-gray-700">${cleanDesc}</div>`
             : '<div class="mt-4 text-sm text-gray-400 italic">No description provided.</div>';
 
         // Address Block
@@ -1690,6 +1693,8 @@ Object.assign(App, {
             if (input.contentEditable === 'true') {
                 const stripped = newValue.replace(/<br\s*\/?>/gi, '').replace(/<div>\s*<\/div>/gi, '').trim();
                 if (!stripped) newValue = '';
+                // Remove contenteditable attrs so they aren't stored in the DB
+                newValue = newValue.replace(/\s*contenteditable="[^"]*"/gi, '');
             }
             const standardFields = ['name', 'title', 'company', 'lead_value', 'email', 'phone', 'source', 'stage_id', 'assigned_to', 'address', 'city', 'state', 'country', 'zip_code', 'website', 'description'];
 
