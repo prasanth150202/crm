@@ -850,12 +850,11 @@ Object.assign(App, {
             } else if (f.name === 'created_at' || f.name === 'updated_at') {
                 content = content !== '-' ? new Date(content).toLocaleDateString() : '-';
             } else if (f.name === 'description') {
-                // Decode any legacy HTML-escaped content before processing
-                const _d = document.createElement('textarea');
-                _d.innerHTML = lead.description || '';
-                const fullDesc = _d.value;
-                // Strip HTML tags for the plain-text preview; store raw HTML in data-full
-                const textContent = fullDesc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+                const fullDesc = lead.description || '';
+                // Use a div to extract plain text — strips all HTML tags including <div>, <span> etc.
+                const _tmp = document.createElement('div');
+                _tmp.innerHTML = fullDesc;
+                const textContent = (_tmp.innerText || '').replace(/\s+/g, ' ').trim();
                 const preview = textContent.length > 80 ? textContent.substring(0, 80) + '…' : (textContent || '-');
                 const safeAttr = fullDesc.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/\n/g,'&#10;');
                 const safeDisp = preview.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -996,13 +995,8 @@ Object.assign(App, {
         if (colorMap[key]) statusColor = colorMap[key];
 
         // Format Description — decode any legacy HTML-escaped content, strip contenteditable attrs
-        const _decodeDesc = (s) => {
-            const t = document.createElement('textarea');
-            t.innerHTML = s;
-            return t.value;
-        };
         const cleanDesc = lead.description
-            ? _decodeDesc(lead.description).replace(/\s*contenteditable="[^"]*"/gi, '')
+            ? lead.description.replace(/\s*contenteditable="[^"]*"/gi, '')
             : null;
         const descriptionHtml = cleanDesc
             ? `<div class="mt-4 p-3 bg-gray-50 rounded text-sm text-gray-700">${cleanDesc}</div>`
@@ -1762,7 +1756,9 @@ Object.assign(App, {
                             const user = users.find(u => u.id == newValue);
                             cell.innerHTML = user ? (user.full_name || user.email) : 'Unassigned';
                         } else if (field === 'description') {
-                            const text = (newValue || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+                            const _tmp2 = document.createElement('div');
+                            _tmp2.innerHTML = newValue || '';
+                            const text = (_tmp2.innerText || '').replace(/\s+/g, ' ').trim();
                             const preview = text.length > 80 ? text.substring(0, 80) + '…' : (text || '-');
                             const safeDisp = preview.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
                             cell.setAttribute('data-full', newValue || '');
