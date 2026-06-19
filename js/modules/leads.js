@@ -850,7 +850,10 @@ Object.assign(App, {
             } else if (f.name === 'created_at' || f.name === 'updated_at') {
                 content = content !== '-' ? new Date(content).toLocaleDateString() : '-';
             } else if (f.name === 'description') {
-                const fullDesc = lead.description || '';
+                // Decode any legacy HTML-escaped content before processing
+                const _d = document.createElement('textarea');
+                _d.innerHTML = lead.description || '';
+                const fullDesc = _d.value;
                 // Strip HTML tags for the plain-text preview; store raw HTML in data-full
                 const textContent = fullDesc.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
                 const preview = textContent.length > 80 ? textContent.substring(0, 80) + '…' : (textContent || '-');
