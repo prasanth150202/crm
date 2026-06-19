@@ -3,3 +3,8 @@
 {"timestamp":"2026-06-19 10:40:07","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":24,"ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
 {"timestamp":"2026-06-19 10:40:07","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/leads2\/api\/auth\/login.php"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
 {"timestamp":"2026-06-19 10:40:11","level":"INFO","message":"User logged in","context":{"user_id":24,"email":"admin@kaapistop.com","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-06-19 12:07:26","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":24,"ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-06-19 12:07:26","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/leads2\/api\/auth\/login.php"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-06-19 12:07:30","level":"WARNING","message":"Failed login attempt - invalid password","context":{"user_id":24,"ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-06-19 12:07:30","level":"ERROR","message":"Invalid credentials","context":{"code":401,"errors":null,"uri":"\/leads2\/api\/auth\/login.php"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
+{"timestamp":"2026-06-19 12:07:32","level":"INFO","message":"User logged in","context":{"user_id":24,"email":"admin@kaapistop.com","ip":"::1"},"ip":"::1","uri":"\/leads2\/api\/auth\/login.php","method":"POST"}
