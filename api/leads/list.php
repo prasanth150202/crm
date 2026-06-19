@@ -354,9 +354,9 @@ try {
             $lead['custom_data'] = [];
         }
         
-        // Sanitize for JSON output
+        // Sanitize for JSON output — skip description as it stores HTML
         foreach ($lead as $key => $value) {
-            if ($key !== 'custom_data' && is_string($value)) {
+            if ($key !== 'custom_data' && $key !== 'description' && is_string($value)) {
                 $lead[$key] = htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
             }
         }

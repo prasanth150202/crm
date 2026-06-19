@@ -992,9 +992,14 @@ Object.assign(App, {
         };
         if (colorMap[key]) statusColor = colorMap[key];
 
-        // Format Description — strip contenteditable attrs so table cells are read-only in this view
+        // Format Description — decode any legacy HTML-escaped content, strip contenteditable attrs
+        const _decodeDesc = (s) => {
+            const t = document.createElement('textarea');
+            t.innerHTML = s;
+            return t.value;
+        };
         const cleanDesc = lead.description
-            ? lead.description.replace(/\s*contenteditable="[^"]*"/gi, '')
+            ? _decodeDesc(lead.description).replace(/\s*contenteditable="[^"]*"/gi, '')
             : null;
         const descriptionHtml = cleanDesc
             ? `<div class="mt-4 p-3 bg-gray-50 rounded text-sm text-gray-700">${cleanDesc}</div>`

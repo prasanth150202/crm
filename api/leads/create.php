@@ -48,7 +48,7 @@ $state = isset($data['state']) ? htmlspecialchars($data['state']) : null;
 $country = isset($data['country']) ? htmlspecialchars($data['country']) : null;
 $zip_code = isset($data['zip_code']) ? htmlspecialchars($data['zip_code']) : null;
 $website = isset($data['website']) ? htmlspecialchars($data['website']) : null;
-$description = isset($data['description']) ? htmlspecialchars($data['description']) : null;
+$description = isset($data['description']) ? $data['description'] : null;
 
 // Custom Data (JSON)
 $custom_data = isset($data['custom_data']) ? json_encode($data['custom_data']) : null;
